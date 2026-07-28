@@ -5,85 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#090a10">
-  <title>Abriendo oferta | Ofertas Flash Chile</title>
+  <title>Abrir oferta | Ofertas Flash Chile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#090a10;--panel:#141720;--text:#f7f8fc;--muted:#a5a9b9;--line:rgba(255,255,255,.1);--yellow:#ffe500;--violet:#9b87ff;--green:#64e7a7}
-    *{box-sizing:border-box}html{color-scheme:dark}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 0,rgba(111,88,255,.25),transparent 38rem),radial-gradient(circle at 100% 80%,rgba(255,85,165,.13),transparent 30rem),var(--bg);color:var(--text);font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;padding:24px}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.17;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
-    a{text-decoration:none;color:inherit}button{font:inherit}.wrap{width:min(980px,100%);margin:auto}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.brand{display:flex;align-items:center;gap:11px}.mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--yellow);color:#111;font-family:"Space Grotesk";font-size:1.25rem;font-weight:800;transform:rotate(-5deg)}.brand span{display:grid;line-height:1}.brand strong{font-family:"Space Grotesk"}.brand small{margin-top:5px;color:var(--muted);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase}.back{color:#b9bdca;font-size:.76rem;font-weight:800}
-    .launcher{display:grid;grid-template-columns:.88fr 1.12fr;overflow:hidden;border:1px solid var(--line);border-radius:32px;background:rgba(20,23,32,.9);box-shadow:0 35px 100px rgba(0,0,0,.45);backdrop-filter:blur(20px)}
-    .product{position:relative;display:grid;place-items:center;min-height:620px;padding:35px;background:radial-gradient(circle,rgba(155,135,255,.2),transparent 58%)}.product::after{content:"";position:absolute;width:350px;height:350px;border:1px solid rgba(255,255,255,.1);border-radius:50%;animation:spin 20s linear infinite}.product img{position:relative;z-index:2;width:100%;max-height:390px;object-fit:contain;filter:drop-shadow(0 35px 55px rgba(0,0,0,.5));animation:float 5s ease-in-out infinite}.badge{position:absolute;z-index:3;top:26px;left:26px;padding:7px 11px;border:1px solid rgba(255,229,0,.3);border-radius:999px;background:rgba(9,10,16,.7);color:var(--yellow);font-size:.62rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.price-card{position:absolute;z-index:4;right:25px;bottom:25px;padding:14px 17px;border:1px solid rgba(255,229,0,.28);border-radius:18px;background:rgba(9,10,16,.8);backdrop-filter:blur(14px);transform:rotate(-2deg)}.price-card small{display:block;color:var(--yellow);font-size:.55rem;font-weight:900;letter-spacing:.13em}.price-card strong{font-family:"Space Grotesk";font-size:1.55rem}
-    .content{padding:clamp(28px,5vw,55px)}.environment{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.035);color:#bec1cd;font-size:.64rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.environment i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(100,231,167,.09)}.environment.warning{border-color:rgba(255,229,0,.25);color:var(--yellow)}.environment.warning i{background:var(--yellow);box-shadow:0 0 0 5px rgba(255,229,0,.09)}
-    h1{margin:20px 0 10px;font-family:"Space Grotesk";font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:-.05em;line-height:1.02}.variant{margin:0;color:#d2d4dc;font-size:.82rem;font-weight:800}.intro{margin:18px 0 24px;color:var(--muted);font-size:.88rem}.notice{display:none;margin:0 0 20px;padding:16px;border-left:3px solid var(--yellow);border-radius:0 14px 14px 0;background:rgba(255,229,0,.065);color:#d9dbe3;font-size:.77rem}.notice.show{display:block}.notice strong{color:var(--yellow)}
-    .actions{display:grid;gap:11px}.action{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:58px;padding:13px 17px;border:1px solid transparent;border-radius:16px;cursor:pointer;font-weight:900;font-size:.84rem;transition:.22s}.action:hover{transform:translateY(-2px)}.primary{background:var(--yellow);color:#111;box-shadow:0 14px 35px rgba(255,229,0,.14)}.external{background:linear-gradient(110deg,var(--violet),#7c6af4);color:#fff}.secondary{border-color:var(--line);background:rgba(255,255,255,.035);color:#e4e6ed}.quiet{border-color:transparent;background:transparent;color:#969baa;min-height:45px}.action svg{width:19px;height:19px;flex:0 0 auto}
-    .tips{margin-top:25px;padding-top:23px;border-top:1px solid var(--line)}.tips h2{margin:0 0 13px;font-family:"Space Grotesk";font-size:1rem}.tips ol{display:grid;gap:10px;margin:0;padding:0;list-style:none;counter-reset:tip}.tips li{position:relative;padding-left:38px;color:var(--muted);font-size:.72rem}.tips li::before{counter-increment:tip;content:counter(tip);position:absolute;left:0;top:-1px;display:grid;place-items:center;width:25px;height:25px;border-radius:8px;background:rgba(255,255,255,.07);color:#fff;font-weight:900}.status{min-height:24px;margin:14px 0 0;color:var(--green);font-size:.7rem;font-weight:800;text-align:center}.legal{margin:20px 0 0;color:#727788;font-size:.62rem;text-align:center}
-    @keyframes float{50%{transform:translateY(-13px)}}@keyframes spin{to{transform:rotate(360deg)}}
-    @media(max-width:760px){body{padding:12px}.top{padding:6px 2px}.launcher{grid-template-columns:1fr;border-radius:25px}.product{min-height:330px;padding:22px}.product::after{width:260px;height:260px}.product img{max-height:245px}.badge{top:17px;left:17px}.price-card{right:16px;bottom:16px}.content{padding:27px 20px 25px}h1{font-size:2.45rem}.tips{margin-top:20px}}
-    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+    :root{color-scheme:dark;--bg:#090a10;--panel:#121520;--panel2:#181c29;--text:#f7f8fc;--muted:#a8adbd;--line:rgba(255,255,255,.1);--yellow:#ffe600;--violet:#9274ff;--green:#5ce4a6;--danger:#ffcc45}
+    *{box-sizing:border-box}html{min-height:100%;background:var(--bg)}body{margin:0;min-height:100vh;color:var(--text);font-family:Manrope,system-ui,sans-serif;background:radial-gradient(circle at 10% 0,rgba(146,116,255,.18),transparent 26rem),radial-gradient(circle at 95% 20%,rgba(255,230,0,.07),transparent 24rem),var(--bg)}a,button{font:inherit}.shell{width:min(760px,calc(100% - 28px));margin:auto;padding:22px 0 56px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.back{display:inline-flex;align-items:center;gap:9px;color:#d9dbe4;text-decoration:none;font-weight:800}.brand{display:flex;align-items:center;gap:10px}.brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--yellow);color:#111;font-family:'Space Grotesk';font-weight:900;transform:rotate(-4deg)}.brand-copy{display:grid;line-height:1.05}.brand-copy small{margin-top:4px;color:var(--muted);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase}.card{overflow:hidden;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.018));box-shadow:0 30px 90px rgba(0,0,0,.42)}.product{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:28px;border-bottom:1px solid var(--line)}.media{position:relative;display:grid;place-items:center;min-height:210px;border-radius:22px;background:radial-gradient(circle,rgba(146,116,255,.22),transparent 64%)}.media img{max-width:100%;max-height:210px;filter:drop-shadow(0 25px 35px rgba(0,0,0,.34))}.badge{position:absolute;top:12px;left:12px;padding:7px 10px;border:1px solid rgba(255,230,0,.28);border-radius:999px;background:rgba(255,230,0,.09);color:var(--yellow);font-size:.65rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.copy h1{margin:8px 0 10px;font-family:'Space Grotesk';font-size:clamp(2rem,6vw,3.2rem);line-height:1;letter-spacing:-.045em}.variant{margin:0;color:#d4d6df;font-weight:800}.price{margin-top:20px}.price small{display:block;color:var(--muted);font-size:.66rem;font-weight:900;letter-spacing:.12em}.price strong{font-family:'Space Grotesk';font-size:2.7rem;line-height:1;color:var(--yellow)}.content{padding:28px}.env{display:flex;align-items:center;gap:10px;margin-bottom:18px;color:var(--green);font-size:.78rem;font-weight:900}.env i{width:9px;height:9px;border-radius:50%;background:currentColor;box-shadow:0 0 0 7px color-mix(in srgb,currentColor 12%,transparent)}.tiktok-panel{display:none}.tiktok-mode .tiktok-panel{display:block}.tiktok-mode .normal-panel{display:none}.warning{position:relative;margin-bottom:20px;padding:22px 22px 22px 25px;border-left:4px solid var(--yellow);border-radius:0 19px 19px 0;background:rgba(255,230,0,.075)}.warning::after{content:'↗';position:absolute;right:18px;top:8px;color:var(--yellow);font-size:2.2rem;animation:point 1.2s ease-in-out infinite}.warning strong{display:block;padding-right:42px;color:var(--yellow);font-size:1.05rem}.warning p{margin:8px 0 0;color:#d5d7df;line-height:1.6}.steps{display:grid;gap:12px;margin:22px 0}.step{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:17px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025)}.step b{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--yellow);color:#111;font-family:'Space Grotesk';font-size:1.2rem}.step strong{display:block}.step span{color:var(--muted);font-size:.86rem;line-height:1.5}.action-grid{display:grid;gap:12px;margin-top:20px}.action{display:flex;align-items:center;justify-content:center;gap:11px;width:100%;min-height:58px;padding:14px 18px;border:1px solid transparent;border-radius:17px;cursor:pointer;text-decoration:none;font-weight:900;transition:.2s transform,.2s background,.2s border-color}.action:hover{transform:translateY(-2px)}.primary{background:var(--yellow);color:#111}.violet{background:linear-gradient(135deg,#a48cff,#7858ff);color:white}.secondary{border-color:var(--line);background:rgba(255,255,255,.035);color:#f2f3f8}.quiet{border-color:transparent;background:transparent;color:#b7bbca}.manual{margin-top:16px;padding:17px;border:1px solid var(--line);border-radius:17px;background:#0d1018}.manual label{display:block;margin-bottom:9px;color:var(--muted);font-size:.72rem;font-weight:800}.manual-row{display:flex;gap:8px}.manual input{min-width:0;flex:1;padding:13px;border:1px solid var(--line);border-radius:12px;background:#090b11;color:#dfe1e8;font:600 .76rem Manrope}.manual button{padding:0 14px;border:0;border-radius:12px;background:#272c3b;color:white;font-weight:900}.note{margin:16px 0 0;color:#8f94a4;font-size:.76rem;line-height:1.55;text-align:center}.status{min-height:24px;margin:13px 0 0;color:var(--green);font-size:.82rem;font-weight:800;text-align:center}.normal-panel h2{margin:0 0 8px;font-family:'Space Grotesk';font-size:1.8rem}.normal-panel>p{margin:0 0 20px;color:var(--muted);line-height:1.6}.legal{margin:24px 0 0;padding-top:20px;border-top:1px solid var(--line);color:#747989;font-size:.68rem;line-height:1.55;text-align:center}@keyframes point{50%{transform:translate(5px,-5px)}}@media(max-width:620px){.shell{width:min(100% - 20px,760px);padding-top:14px}.top{padding:0 4px}.brand-copy{display:none}.card{border-radius:23px}.product{grid-template-columns:1fr;padding:20px}.media{min-height:200px}.media img{max-height:190px}.copy h1{font-size:2.35rem}.content{padding:20px}.warning{padding:20px 18px 20px 21px}.manual-row{flex-direction:column}.manual button{min-height:45px}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="top">
-      <a class="brand" href="index.html"><span class="mark">F</span><span><strong>Ofertas Flash</strong><small>Chile</small></span></a>
-      <a class="back" href="index.html">← Volver al catálogo</a>
-    </header>
+  <div class="shell">
+    <div class="top">
+      <a class="back" href="index.html">← Catálogo</a>
+      <div class="brand"><span class="brand-mark">F</span><span class="brand-copy"><strong>Ofertas Flash</strong><small>Chile</small></span></div>
+    </div>
 
-    <main class="launcher">
-      <section class="product" aria-label="Producto seleccionado">
-        <span class="badge" id="product-badge">Oferta seleccionada</span>
-        <img id="product-image" src="assets/phone-hero.svg" alt="Producto seleccionado">
-        <div class="price-card"><small>PRECIO PUBLICADO</small><strong id="product-price">—</strong></div>
+    <main class="card">
+      <section class="product">
+        <div class="media"><span class="badge" id="product-badge">Oferta</span><img id="product-image" src="assets/phone-hero.svg" alt="Producto seleccionado"></div>
+        <div class="copy">
+          <p class="variant" id="product-variant"></p>
+          <h1 id="product-title">Cargando oferta…</h1>
+          <div class="price"><small>PRECIO PUBLICADO</small><strong id="product-price">—</strong></div>
+        </div>
       </section>
 
       <section class="content">
-        <span class="environment" id="environment"><i></i><span>Detectando navegador…</span></span>
-        <h1 id="product-title">Preparando la oferta…</h1>
-        <p class="variant" id="product-variant"></p>
-        <p class="intro" id="intro">Elige cómo deseas abrir la publicación exacta.</p>
+        <div class="env" id="environment"><i></i><span>Detectando navegador…</span></div>
 
-        <div class="notice" id="tiktok-warning">
-          <strong>TikTok limita la apertura de otras aplicaciones.</strong><br>
-          Para abrir Mercado Libre como app, sal primero al navegador externo. Seguir en la web también funciona, pero el botón “abrir app” de Mercado Libre puede fallar dentro de TikTok.
+        <div class="tiktok-panel">
+          <div class="warning">
+            <strong>TikTok bloquea los saltos hacia Chrome y Mercado Libre.</strong>
+            <p>Por eso eliminamos los botones que daban error. La salida fiable depende del menú de TikTok que aparece arriba a la derecha.</p>
+          </div>
+
+          <div class="steps">
+            <div class="step"><b>1</b><div><strong>Toca los tres puntos ⋯ de arriba</strong><span>Es el menú que aparece en la esquina superior derecha del navegador de TikTok.</span></div></div>
+            <div class="step"><b>2</b><div><strong>Elige “Abrir en navegador”</strong><span>Según tu teléfono también puede decir “Abrir en Chrome” o “Navegador externo”.</span></div></div>
+            <div class="step"><b>3</b><div><strong>Vuelve a tocar la oferta</strong><span>Fuera de TikTok aparecerán los botones para abrir el producto exacto en Mercado Libre.</span></div></div>
+          </div>
+
+          <div class="action-grid">
+            <button class="action violet" id="share-button" type="button">Compartir esta página</button>
+            <button class="action secondary" id="copy-button" type="button">Copiar enlace corto</button>
+          </div>
+
+          <div class="manual">
+            <label for="manual-url">Enlace corto para pegar en Chrome</label>
+            <div class="manual-row"><input id="manual-url" readonly value=""><button id="select-button" type="button">Seleccionar</button></div>
+          </div>
+          <p class="status" id="tiktok-status" role="status" aria-live="polite"></p>
+          <p class="note">La web no puede pulsar ni controlar el menú ⋯ de TikTok. Esa restricción pertenece a la aplicación, no a la página.</p>
         </div>
 
-        <div class="actions">
-          <button class="action external" id="external-button" type="button" hidden>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>
-            <span>Abrir fuera de TikTok</span>
-          </button>
-
-          <a class="action primary" id="app-button" href="#" rel="nofollow sponsored">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 18h6"/></svg>
-            <span>Abrir en Mercado Libre</span>
-          </a>
-
-          <a class="action secondary" id="web-button" href="#" rel="nofollow sponsored">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
-            <span>Continuar en la versión web</span>
-          </a>
-
-          <button class="action quiet" id="copy-button" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
-            <span>Copiar enlace de la oferta</span>
-          </button>
+        <div class="normal-panel">
+          <h2>¿Cómo quieres abrir la oferta?</h2>
+          <p>Ya estás fuera del navegador interno de TikTok. Puedes intentar abrir la aplicación o continuar en la publicación web.</p>
+          <div class="action-grid">
+            <a class="action primary" id="app-button" href="#" rel="nofollow sponsored">Abrir producto en Mercado Libre</a>
+            <a class="action secondary" id="web-button" href="#" rel="nofollow sponsored">Continuar en la versión web</a>
+            <button class="action quiet" id="normal-share-button" type="button">Compartir oferta</button>
+          </div>
+          <p class="status" id="normal-status" role="status" aria-live="polite"></p>
         </div>
 
-        <p class="status" id="status" role="status" aria-live="polite"></p>
-
-        <div class="tips" id="tiktok-tips" hidden>
-          <h2>También puedes hacerlo desde el menú de TikTok</h2>
-          <ol>
-            <li>Toca los tres puntos de la esquina superior derecha.</li>
-            <li>Elige “Abrir en navegador” o “Abrir en Chrome”.</li>
-            <li>Vuelve a pulsar la oferta; fuera de TikTok, Mercado Libre podrá abrir la app.</li>
-          </ol>
-        </div>
-
-        <p class="legal">Enlace de afiliado. La compra, el pago, el despacho y la garantía se realizan directamente en Mercado Libre.</p>
+        <p class="legal">Enlace de afiliado. La compra, el pago, el despacho y la garantía se realizan directamente en Mercado Libre. Precio y stock sujetos a cambios.</p>
       </section>
     </main>
   </div>
@@ -95,12 +83,11 @@
       const params = new URLSearchParams(location.search);
       const requestedId = params.get('offer');
       const offers = Array.isArray(window.OFFERS) ? window.OFFERS : [];
-      const offer = offers.find((item) => item.id === requestedId) || offers.find((item) => item.featured) || offers[0];
+      const offer = offers.find(item => item.id === requestedId) || offers.find(item => item.featured) || offers[0];
       const ua = navigator.userAgent || '';
       const isTikTok = /tiktok|musical_ly|bytedance|trill/i.test(ua);
-      const isAndroid = /android/i.test(ua);
-      const isIOS = /iphone|ipad|ipod/i.test(ua);
-      const formatPrice = (value) => '$' + new Intl.NumberFormat('es-CL').format(Number(value) || 0);
+      const shortUrl = new URL(`go.html?offer=${encodeURIComponent(offer?.id || '')}`, location.href).href;
+      const formatPrice = value => '$' + new Intl.NumberFormat('es-CL').format(Number(value) || 0);
 
       const title = document.getElementById('product-title');
       const variant = document.getElementById('product-variant');
@@ -108,17 +95,12 @@
       const price = document.getElementById('product-price');
       const badge = document.getElementById('product-badge');
       const environment = document.getElementById('environment');
-      const warning = document.getElementById('tiktok-warning');
-      const tips = document.getElementById('tiktok-tips');
-      const appButton = document.getElementById('app-button');
-      const webButton = document.getElementById('web-button');
-      const externalButton = document.getElementById('external-button');
-      const copyButton = document.getElementById('copy-button');
-      const status = document.getElementById('status');
+      const manual = document.getElementById('manual-url');
 
       if (!offer) {
         title.textContent = 'No encontramos esta oferta';
-        document.querySelector('.actions').innerHTML = '<a class="action primary" href="index.html">Volver al catálogo</a>';
+        variant.textContent = 'Vuelve al catálogo para elegir otra publicación.';
+        document.querySelector('.content').insertAdjacentHTML('beforeend','<a class="action primary" href="index.html">Volver al catálogo</a>');
         return;
       }
 
@@ -131,77 +113,56 @@
       image.onerror = () => { image.onerror = null; image.src = offer.imageFallback || 'assets/phone-hero.svg'; };
       price.textContent = formatPrice(offer.price);
       badge.textContent = offer.badge || 'Oferta seleccionada';
-      webButton.href = offer.webUrl;
-      webButton.target = '_self';
-      appButton.href = offer.affiliateUrl || offer.webUrl;
-      appButton.target = '_self';
-
-      const buildChromeIntent = (url, fallbackUrl) => {
-        try {
-          const parsed = new URL(url);
-          const target = parsed.host + parsed.pathname + parsed.search;
-          return `intent://${target}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(fallbackUrl)};end`;
-        } catch (_) {
-          return fallbackUrl;
-        }
-      };
+      manual.value = shortUrl;
 
       if (isTikTok) {
-        environment.classList.add('warning');
-        environment.querySelector('span').textContent = 'Navegador interno de TikTok';
-        warning.classList.add('show');
-        tips.hidden = false;
-        externalButton.hidden = false;
-        appButton.querySelector('span').textContent = 'Intentar abrir Mercado Libre';
-
-        if (isAndroid) {
-          externalButton.querySelector('span').textContent = 'Abrir en Chrome y luego en la app';
-          externalButton.addEventListener('click', () => {
-            status.textContent = 'Saliendo al navegador externo…';
-            location.href = buildChromeIntent(offer.affiliateUrl || offer.webUrl, offer.webUrl);
-          });
-        } else {
-          externalButton.querySelector('span').textContent = isIOS ? 'Ver cómo abrir en Safari' : 'Abrir fuera de TikTok';
-          externalButton.addEventListener('click', async () => {
-            await copyOfferLink();
-            status.textContent = 'Enlace copiado. Toca ⋯ y elige “Abrir en navegador”.';
-            tips.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          });
-        }
+        document.body.classList.add('tiktok-mode');
+        environment.querySelector('span').textContent = 'Navegador interno de TikTok detectado';
+        environment.style.color = 'var(--danger)';
       } else {
-        environment.querySelector('span').textContent = isAndroid ? 'Navegador Android' : isIOS ? 'Navegador iPhone' : 'Navegador externo';
-        appButton.querySelector('span').textContent = 'Abrir publicación o aplicación';
+        environment.querySelector('span').textContent = 'Navegador externo listo';
+        const appButton = document.getElementById('app-button');
+        const webButton = document.getElementById('web-button');
+        appButton.href = offer.affiliateUrl || offer.webUrl;
+        webButton.href = offer.webUrl;
+        appButton.target = '_self';
+        webButton.target = '_self';
+        appButton.addEventListener('click', () => document.getElementById('normal-status').textContent = 'Abriendo Mercado Libre…');
+        webButton.addEventListener('click', () => document.getElementById('normal-status').textContent = 'Abriendo publicación web…');
       }
 
-      async function copyOfferLink() {
-        const text = offer.affiliateUrl || offer.webUrl;
+      async function shareOffer(statusElement) {
+        const data = { title: offer.title, text: `Oferta: ${offer.title}`, url: shortUrl };
+        if (navigator.share) {
+          try {
+            await navigator.share(data);
+            statusElement.textContent = 'Opciones del teléfono abiertas.';
+            return;
+          } catch (error) {
+            if (error?.name === 'AbortError') return;
+          }
+        }
+        await copyShortUrl(statusElement);
+      }
+
+      async function copyShortUrl(statusElement) {
         try {
-          await navigator.clipboard.writeText(text);
+          await navigator.clipboard.writeText(shortUrl);
+          statusElement.textContent = 'Enlace copiado. Pégalo en Chrome.';
         } catch (_) {
-          const area = document.createElement('textarea');
-          area.value = text;
-          area.style.position = 'fixed';
-          area.style.opacity = '0';
-          document.body.appendChild(area);
-          area.select();
-          document.execCommand('copy');
-          area.remove();
+          manual.focus();
+          manual.select();
+          statusElement.textContent = 'El navegador bloqueó la copia automática. El enlace quedó seleccionado: mantenlo presionado y toca “Copiar”.';
         }
       }
 
-      copyButton.addEventListener('click', async () => {
-        await copyOfferLink();
-        status.textContent = 'Enlace copiado correctamente.';
-        window.setTimeout(() => { status.textContent = ''; }, 3500);
+      document.getElementById('share-button').addEventListener('click', () => shareOffer(document.getElementById('tiktok-status')));
+      document.getElementById('copy-button').addEventListener('click', () => copyShortUrl(document.getElementById('tiktok-status')));
+      document.getElementById('select-button').addEventListener('click', () => {
+        manual.focus(); manual.select();
+        document.getElementById('tiktok-status').textContent = 'Enlace seleccionado. Mantén presionado y toca “Copiar”.';
       });
-
-      appButton.addEventListener('click', () => {
-        status.textContent = isTikTok ? 'Si TikTok lo bloquea, usa el botón morado para salir a Chrome.' : 'Abriendo Mercado Libre…';
-      });
-
-      webButton.addEventListener('click', () => {
-        status.textContent = 'Abriendo la publicación web…';
-      });
+      document.getElementById('normal-share-button').addEventListener('click', () => shareOffer(document.getElementById('normal-status')));
     })();
   </script>
 </body>
