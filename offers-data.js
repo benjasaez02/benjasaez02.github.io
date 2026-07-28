@@ -69,7 +69,7 @@ window.OFFERS = [
     badge: '60% OFF · Más vendido',
     score: 9.2,
     image: 'https://media.falabella.com/falabellaCL/121961247_01/w%3D1200%2Ch%3D1200%2Cfit%3Dcover',
-    imageFallback: 'assets/phone-hero.svg',
+    imageFallback: 'assets/treadmill.svg',
     specs: [
       { label: 'Potencia', value: '2 HP' },
       { label: 'Velocidad', value: 'Hasta 12 km/h' },
