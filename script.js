@@ -3,7 +3,7 @@
 
   const offers = Array.isArray(window.OFFERS) ? window.OFFERS.filter((offer) => offer.active !== false) : [];
   const formatPrice = (value) => new Intl.NumberFormat('es-CL').format(Number(value) || 0);
-  const offerRoute = (id) => `go.html?v=6&offer=${encodeURIComponent(id)}`;
+  const offerRoute = (id) => `go.html?v=7&offer=${encodeURIComponent(id)}`;
   const isTikTok = /tiktok|musical_ly|bytedance|trill/i.test(navigator.userAgent || '');
 
   document.documentElement.classList.add('js');
@@ -20,6 +20,9 @@
     const specs = (offer.specs || []).slice(0, 4)
       .map((spec) => `<span>${safeText(spec.value)}</span>`)
       .join('');
+    const oldPrice = offer.oldPrice
+      ? `<del style="display:block;margin-bottom:2px;color:#777d8d;font-size:.75rem;font-weight:800">Antes $${formatPrice(offer.oldPrice)}</del>`
+      : '';
 
     return `
       <article class="offer-card ${offer.featured ? 'featured' : ''} reveal" data-category="${safeText(offer.category)}">
@@ -36,7 +39,7 @@
           <p class="offer-description">${safeText(offer.shortDescription)}</p>
           <div class="offer-specs">${specs}</div>
           <div class="offer-footer">
-            <div class="offer-price"><small>PRECIO PUBLICADO</small><strong>$${formatPrice(offer.price)}</strong></div>
+            <div class="offer-price"><small>PRECIO PUBLICADO</small>${oldPrice}<strong>$${formatPrice(offer.price)}</strong></div>
             <a class="offer-button js-offer-link" data-offer-id="${safeText(offer.id)}" href="${offerRoute(offer.id)}">Ver oferta exacta →</a>
           </div>
         </div>
