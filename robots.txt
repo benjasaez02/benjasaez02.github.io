@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://benjasaez02.github.io/sitemap.xml
+Sitemap: https://ofertasflashcl.github.io/sitemap.xml
