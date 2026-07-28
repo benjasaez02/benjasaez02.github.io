@@ -10,13 +10,16 @@ Sitio de ofertas publicado mediante GitHub Pages.
 
 - `index.html`: página principal y secciones del catálogo.
 - `styles.css`: diseño responsive y animaciones.
-- `script.js`: renderizado de tarjetas, filtros y animaciones al hacer scroll.
+- `script.js`: renderizado de tarjetas, filtros y rutas por producto.
 - `offers-data.js`: registro central de todas las ofertas.
-- `go.html`: pantalla de salida que detecta TikTok y ofrece apertura web, navegador externo o copia del enlace.
+- `offer-page.css` y `offer-page.js`: pantalla compartida para abrir cada oferta.
+- `oferta/<id>/index.html`: ruta física permanente de cada producto.
+- `go.html`: compatibilidad con enlaces antiguos; los traslada a la ruta permanente correspondiente.
 
 ## Agregar una oferta
 
-Añade un nuevo objeto dentro de `window.OFFERS` en `offers-data.js`. Cada oferta debe tener un `id` único y sus propios campos `webUrl` y `affiliateUrl`.
+1. Añade un objeto dentro de `window.OFFERS` en `offers-data.js`. Cada oferta debe tener un `id` único y sus propios campos `webUrl` y `affiliateUrl`.
+2. Crea la carpeta `oferta/<id>/` y copia una de las páginas de oferta existentes, cambiando únicamente `data-offer-id` y la URL canónica.
 
 Ejemplo mínimo:
 
@@ -36,6 +39,6 @@ Ejemplo mínimo:
 }
 ```
 
-La tarjeta se crea automáticamente y su botón apuntará a `go.html?offer=producto-unico`, por lo que no se mezclará con los enlaces de otras ofertas.
+La tarjeta se crea automáticamente y su botón apuntará a `/oferta/producto-unico/`. Como el identificador está en la ruta física, abrir el navegador externo conserva el producto aunque un navegador interno elimine parámetros de consulta.
 
 La página contiene enlaces de afiliado y avisa que el precio y el stock pueden cambiar.
