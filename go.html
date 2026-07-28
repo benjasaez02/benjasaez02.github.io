@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#11131a">
+  <title>Abriendo la oferta…</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at 50% 10%, #2a243d 0, #11131a 42%, #090a0f 100%); color: #f7f7fb; }
+    main { width: min(520px, 100%); text-align: center; background: rgba(22, 24, 33, .92); border: 1px solid rgba(255,255,255,.12); border-radius: 28px; padding: 34px 24px; box-shadow: 0 24px 80px rgba(0,0,0,.45); }
+    .logo { width: 70px; height: 70px; margin: 0 auto 20px; border-radius: 20px; display: grid; place-items: center; background: #ffe600; color: #11131a; font-size: 34px; font-weight: 900; transform: rotate(-4deg); }
+    h1 { margin: 0 0 12px; font-size: clamp(27px, 7vw, 40px); line-height: 1.05; }
+    p { margin: 0 auto 22px; max-width: 410px; color: #c9c9d4; line-height: 1.6; }
+    .loader { width: 44px; height: 44px; margin: 8px auto 24px; border-radius: 50%; border: 4px solid rgba(255,255,255,.16); border-top-color: #ffe600; animation: spin .8s linear infinite; }
+    a { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 58px; border-radius: 17px; padding: 14px 18px; background: #ffe600; color: #11131a; font-weight: 900; font-size: 18px; text-decoration: none; }
+    small { display: block; margin-top: 16px; color: #888a98; line-height: 1.5; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="logo" aria-hidden="true">R</div>
+    <h1>Abriendo Mercado Libre…</h1>
+    <p>Te estamos llevando directamente a la publicación para evitar el bloqueo del navegador interno de TikTok.</p>
+    <div class="loader" aria-hidden="true"></div>
+    <a id="manual-link" href="https://www.mercadolibre.cl/xiaomi-poco-c85-negro-128-gb-rom-6-gb-ram/p/MLC54097181?matt_event_ts=1785261105007&amp;matt_d2id=ab94ecd3-be74-48e1-ad95-463ebea22d08&amp;matt_tracing_id=6dea6bb4-2893-454d-9f13-e79af508cd5c#polycard_client=recommendations_home_affiliate-profile&amp;reco_backend=item_decorator&amp;reco_client=home_affiliate-profile&amp;matt_tool_id=82210482&amp;reco_item_pos=0&amp;source=affiliate-profile&amp;reco_backend_type=function&amp;reco_id=6d544f66-fe66-4a9c-adc3-f38d46a55db7&amp;tracking_id=6f35980a-b107-4a40-bbee-5c247beb79c3&amp;c_uid=23354150-4fc6-460f-b273-b90050f76a59&amp;c_id=%2Fhome%2Fcard-featured%2Felement" rel="nofollow sponsored">Toca aquí si no abre automáticamente</a>
+    <small>El enlace contiene parámetros de afiliado. La compra se realiza directamente en Mercado Libre.</small>
+  </main>
+  <script>
+    (() => {
+      const destination = 'https://www.mercadolibre.cl/xiaomi-poco-c85-negro-128-gb-rom-6-gb-ram/p/MLC54097181?matt_event_ts=1785261105007&matt_d2id=ab94ecd3-be74-48e1-ad95-463ebea22d08&matt_tracing_id=6dea6bb4-2893-454d-9f13-e79af508cd5c#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=82210482&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=6d544f66-fe66-4a9c-adc3-f38d46a55db7&tracking_id=6f35980a-b107-4a40-bbee-5c247beb79c3&c_uid=23354150-4fc6-460f-b273-b90050f76a59&c_id=%2Fhome%2Fcard-featured%2Felement';
+      document.getElementById('manual-link').href = destination;
+      window.setTimeout(() => window.location.replace(destination), 120);
+    })();
+  </script>
+</body>
+</html>
