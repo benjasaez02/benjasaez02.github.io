@@ -10,11 +10,11 @@
   document.body.classList.toggle('is-tiktok', isTikTok);
 
   const safeText = (value) => String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 
   function offerCard(offer) {
     const specs = (offer.specs || []).slice(0, 4)
@@ -45,15 +45,8 @@
 
   const grid = document.getElementById('offers-grid');
   const count = document.getElementById('offer-count');
-
-  function renderOffers(category = 'Todas') {
-    if (!grid) return;
-    const visible = category === 'Todas' ? offers : offers.filter((offer) => offer.category === category);
-    grid.innerHTML = visible.map(offerCard).join('');
-    if (count) count.textContent = `${visible.length} ${visible.length === 1 ? 'oferta activa' : 'ofertas activas'}`;
-    bindOfferLinks(grid);
-    observeReveals(grid);
-  }
+  const filterGroup = document.querySelector('.filter-group');
+  const categories = ['Todas', ...new Set(offers.map((offer) => offer.category).filter(Boolean))];
 
   function bindOfferLinks(root = document) {
     root.querySelectorAll('.js-offer-link').forEach((link) => {
@@ -71,14 +64,6 @@
       });
     });
   }
-
-  document.querySelectorAll('.filter-button').forEach((button) => {
-    button.addEventListener('click', () => {
-      document.querySelectorAll('.filter-button').forEach((item) => item.classList.remove('active'));
-      button.classList.add('active');
-      renderOffers(button.dataset.category || 'Todas');
-    });
-  });
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let revealObserver;
@@ -103,6 +88,31 @@
     nodes.forEach((node) => revealObserver.observe(node));
   }
 
+  function renderOffers(category = 'Todas') {
+    if (!grid) return;
+    const visible = category === 'Todas' ? offers : offers.filter((offer) => offer.category === category);
+    grid.innerHTML = visible.map(offerCard).join('');
+    if (visible.length === 1) grid.querySelector('.offer-card')?.style.setProperty('grid-column', '1 / -1');
+    if (count) count.textContent = `${visible.length} ${visible.length === 1 ? 'oferta activa' : 'ofertas activas'}`;
+    bindOfferLinks(grid);
+    observeReveals(grid);
+  }
+
+  function buildFilters() {
+    if (!filterGroup) return;
+    filterGroup.innerHTML = categories.map((category, index) =>
+      `<button class="filter-button ${index === 0 ? 'active' : ''}" type="button" data-category="${safeText(category)}">${safeText(category)}</button>`
+    ).join('');
+
+    filterGroup.querySelectorAll('.filter-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        filterGroup.querySelectorAll('.filter-button').forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        renderOffers(button.dataset.category || 'Todas');
+      });
+    });
+  }
+
   const header = document.getElementById('site-header');
   const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 18);
   updateHeader();
@@ -116,19 +126,16 @@
       const y = (event.clientY - rect.top) / rect.height - 0.5;
       stage.style.transform = `perspective(900px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg)`;
     });
-    stage.addEventListener('pointerleave', () => {
-      stage.style.transform = '';
-    });
+    stage.addEventListener('pointerleave', () => { stage.style.transform = ''; });
   }
 
   const notice = document.getElementById('tiktok-notice');
   if (notice && isTikTok) {
     notice.hidden = false;
-    notice.querySelector('button')?.addEventListener('click', () => {
-      notice.hidden = true;
-    });
+    notice.querySelector('button')?.addEventListener('click', () => { notice.hidden = true; });
   }
 
+  buildFilters();
   renderOffers();
   bindOfferLinks(document);
   observeReveals(document);
