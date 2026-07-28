@@ -1,1 +1,21 @@
-(()=>{const u='https://ddnf.adj.st/webview/?url=https%3A%2F%2Fwww.mercadolibre.cl%2Fxiaomi-poco-c85-negro-128-gb-rom-6-gb-ram%2Fp%2FMLC54097181%3Fmatt_event_ts%3D1785261105007%26matt_d2id%3Dab94ecd3-be74-48e1-ad95-463ebea22d08%26matt_tracing_id%3D6dea6bb4-2893-454d-9f13-e79af508cd5c%23polycard_client%3Drecommendations_home_affiliate-profile%26reco_backend%3Ditem_decorator%26reco_client%3Dhome_affiliate-profile%26matt_tool_id%3D82210482%26reco_item_pos%3D0%26source%3Daffiliate-profile%26reco_backend_type%3Dfunction%26reco_id%3D6d544f66-fe66-4a9c-adc3-f38d46a55db7%26tracking_id%3D6f35980a-b107-4a40-bbee-5c247beb79c3%26c_uid%3D23354150-4fc6-460f-b273-b90050f76a59%26c_id%3D%252Fhome%252Fcard-featured%252Felement&adj_campaign=social&adj_t=1y8rwb1z';document.querySelectorAll('.affiliate-link').forEach(a=>{a.href=u;a.addEventListener('click',()=>{try{localStorage.setItem('ultima_visita_oferta',new Date().toISOString())}catch(e){}})})})();
+(() => {
+  const offerRoute = new URL('go.html', window.location.href).href;
+
+  document.querySelectorAll('.affiliate-link').forEach((link) => {
+    link.href = offerRoute;
+    link.target = '_self';
+    link.rel = 'nofollow sponsored';
+
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      try {
+        localStorage.setItem('ultima_visita_oferta', new Date().toISOString());
+      } catch (_) {
+        // El almacenamiento puede estar bloqueado en navegadores internos.
+      }
+
+      window.location.assign(offerRoute);
+    });
+  });
+})();
