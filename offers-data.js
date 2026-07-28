@@ -79,5 +79,32 @@ window.OFFERS = [
     webUrl: 'https://www.mercadolibre.cl/trotadora-electrica-ten-series-tm60-plegable-2-hp-12-kmh-negro/p/MLC61642965?matt_event_ts=1785275657891&matt_d2id=f8de5277-e2a6-497b-ae7e-0c97af536eee&matt_tracing_id=2e2d5a6d-1125-43f7-b6c8-2290e3c7b566#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=82210482&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=24e259d0-5ae5-4b01-ad9d-2e9d46c69d96&tracking_id=5e563bf1-1fb3-4e00-8645-40b9f43a5cff&c_uid=9583c421-5881-4b88-b211-4fe50dea5e15&c_id=%2Fhome%2Fcard-featured%2Felement',
     affiliateUrl: 'https://ddnf.adj.st/webview/?url=https%3A%2F%2Fwww.mercadolibre.cl%2Ftrotadora-electrica-ten-series-tm60-plegable-2-hp-12-kmh-negro%2Fp%2FMLC61642965%3Fmatt_event_ts%3D1785275657891%26matt_d2id%3Df8de5277-e2a6-497b-ae7e-0c97af536eee%26matt_tracing_id%3D2e2d5a6d-1125-43f7-b6c8-2290e3c7b566%23polycard_client%3Drecommendations_home_affiliate-profile%26reco_backend%3Ditem_decorator%26reco_client%3Dhome_affiliate-profile%26matt_tool_id%3D82210482%26reco_item_pos%3D0%26source%3Daffiliate-profile%26reco_backend_type%3Dfunction%26reco_id%3D24e259d0-5ae5-4b01-ad9d-2e9d46c69d96%26tracking_id%3D5e563bf1-1fb3-4e00-8645-40b9f43a5cff%26c_uid%3D9583c421-5881-4b88-b211-4fe50dea5e15%26c_id%3D%252Fhome%252Fcard-featured%252Felement&adj_campaign=social&adj_t=1y8rwb1z',
     publishedAt: '2026-07-28'
+  },
+  {
+    id: 'trotadora-ten-series-tm40-lite',
+    category: 'Deporte y Fitness',
+    featured: false,
+    active: true,
+    brand: 'Ten Series',
+    name: 'TM40 Lite',
+    variant: 'Negro · Ultrafina · Uso residencial',
+    title: 'Trotadora eléctrica Ten Series TM40 Lite 1,5 HP',
+    shortDescription: 'Trotadora compacta y silenciosa para caminar o trotar suavemente en casa, con diseño de solo 12 cm de alto, inclinación manual y control remoto.',
+    price: 99990,
+    oldPrice: 299990,
+    currency: 'CLP',
+    badge: '66% OFF · #1 en Trotadoras',
+    score: 9.1,
+    image: 'https://tenseries.cl/cdn/shop/files/TM40Lite-Marketplace1.jpg?v=1765976353&width=1946',
+    imageFallback: 'assets/treadmill.svg',
+    specs: [
+      { label: 'Potencia máxima', value: '1,5 HP' },
+      { label: 'Velocidad', value: 'Hasta 8 km/h' },
+      { label: 'Peso soportado', value: 'Hasta 100 kg' },
+      { label: 'Altura guardada', value: '12 cm' }
+    ],
+    webUrl: 'https://www.mercadolibre.cl/trotadora-tm40-lite-ten-series/p/MLC53544555?matt_event_ts=1785283022947&matt_d2id=4140b4f5-3731-496d-80a1-fc7ef30615bd&matt_tracing_id=c9729c9f-6c27-4517-a469-634d2c505cee#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=82210482&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e95e0ccb-624f-4945-8bb9-7b990efbba2c&tracking_id=2b05f115-67a7-4775-b15d-50c9f27237c8&c_id=%2Fhome%2Fcard-featured%2Felement&c_uid=8bc3a1b7-3136-43f6-9c95-fa04daac98fa',
+    affiliateUrl: 'https://ddnf.adj.st/webview/?url=https%3A%2F%2Fwww.mercadolibre.cl%2Ftrotadora-tm40-lite-ten-series%2Fp%2FMLC53544555%3Fmatt_event_ts%3D1785283022947%26matt_d2id%3D4140b4f5-3731-496d-80a1-fc7ef30615bd%26matt_tracing_id%3Dc9729c9f-6c27-4517-a469-634d2c505cee%23polycard_client%3Drecommendations_home_affiliate-profile%26reco_backend%3Ditem_decorator%26reco_client%3Dhome_affiliate-profile%26matt_tool_id%3D82210482%26reco_item_pos%3D0%26source%3Daffiliate-profile%26reco_backend_type%3Dfunction%26reco_id%3De95e0ccb-624f-4945-8bb9-7b990efbba2c%26tracking_id%3D2b05f115-67a7-4775-b15d-50c9f27237c8%26c_id%3D%252Fhome%252Fcard-featured%252Felement%26c_uid%3D8bc3a1b7-3136-43f6-9c95-fa04daac98fa&adj_t=1y8rwb1z&adj_campaign=social',
+    publishedAt: '2026-07-28'
   }
 ];
