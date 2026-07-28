@@ -3,7 +3,7 @@
 
   const offers = Array.isArray(window.OFFERS) ? window.OFFERS.filter((offer) => offer.active !== false) : [];
   const formatPrice = (value) => new Intl.NumberFormat('es-CL').format(Number(value) || 0);
-  const offerRoute = (id) => `go.html?offer=${encodeURIComponent(id)}`;
+  const offerRoute = (id) => `go.html?v=6&offer=${encodeURIComponent(id)}`;
   const isTikTok = /tiktok|musical_ly|bytedance|trill/i.test(navigator.userAgent || '');
 
   document.documentElement.classList.add('js');
