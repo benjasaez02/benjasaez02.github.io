@@ -52,5 +52,32 @@ window.OFFERS = [
     webUrl: 'https://www.mercadolibre.cl/moto-g86-power-5g-8256gb-azul/p/MLC66215014?matt_event_ts=1785271034805&matt_d2id=b0d24616-0224-4af0-b834-16606ba9c785&matt_tracing_id=2fe53a06-79a9-4080-99bf-c4abba9d0a4c#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=82210482&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=3bd5be5b-9cc5-46ff-9972-e32dd9631711&tracking_id=33037b4f-c36c-4225-ad7e-06b4294b3ea2&c_uid=260d896b-65b1-4c1f-88fd-c8c1ffccf3cd&c_id=%2Fhome%2Fcard-featured%2Felement',
     affiliateUrl: 'https://ddnf.adj.st/webview/?url=https%3A%2F%2Fwww.mercadolibre.cl%2Fmoto-g86-power-5g-8256gb-azul%2Fp%2FMLC66215014%3Fmatt_event_ts%3D1785271034805%26matt_d2id%3Db0d24616-0224-4af0-b834-16606ba9c785%26matt_tracing_id%3D2fe53a06-79a9-4080-99bf-c4abba9d0a4c%23polycard_client%3Drecommendations_home_affiliate-profile%26reco_backend%3Ditem_decorator%26reco_client%3Dhome_affiliate-profile%26matt_tool_id%3D82210482%26reco_item_pos%3D0%26source%3Daffiliate-profile%26reco_backend_type%3Dfunction%26reco_id%3D3bd5be5b-9cc5-46ff-9972-e32dd9631711%26tracking_id%3D33037b4f-c36c-4225-ad7e-06b4294b3ea2%26c_uid%3D260d896b-65b1-4c1f-88fd-c8c1ffccf3cd%26c_id%3D%252Fhome%252Fcard-featured%252Felement&adj_campaign=social&adj_t=1y8rwb1z',
     publishedAt: '2026-07-28'
+  },
+  {
+    id: 'trotadora-ten-series-tm60',
+    category: 'Deporte y Fitness',
+    featured: false,
+    active: true,
+    brand: 'Ten Series',
+    name: 'TM60',
+    variant: 'Negro · Plegable · Uso residencial',
+    title: 'Trotadora eléctrica Ten Series TM60 2 HP',
+    shortDescription: 'Trotadora plegable para entrenar en casa, con velocidad máxima de 12 km/h, 12 programas, inclinación manual y monitor de frecuencia cardíaca.',
+    price: 159990,
+    oldPrice: 399990,
+    currency: 'CLP',
+    badge: '60% OFF · Más vendido',
+    score: 9.2,
+    image: 'https://media.falabella.com/falabellaCL/121961247_01/w%3D1200%2Ch%3D1200%2Cfit%3Dcover',
+    imageFallback: 'assets/phone-hero.svg',
+    specs: [
+      { label: 'Potencia', value: '2 HP' },
+      { label: 'Velocidad', value: 'Hasta 12 km/h' },
+      { label: 'Peso soportado', value: 'Hasta 100 kg' },
+      { label: 'Diseño', value: 'Plegable' }
+    ],
+    webUrl: 'https://www.mercadolibre.cl/trotadora-electrica-ten-series-tm60-plegable-2-hp-12-kmh-negro/p/MLC61642965?matt_event_ts=1785275657891&matt_d2id=f8de5277-e2a6-497b-ae7e-0c97af536eee&matt_tracing_id=2e2d5a6d-1125-43f7-b6c8-2290e3c7b566#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=82210482&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=24e259d0-5ae5-4b01-ad9d-2e9d46c69d96&tracking_id=5e563bf1-1fb3-4e00-8645-40b9f43a5cff&c_uid=9583c421-5881-4b88-b211-4fe50dea5e15&c_id=%2Fhome%2Fcard-featured%2Felement',
+    affiliateUrl: 'https://ddnf.adj.st/webview/?url=https%3A%2F%2Fwww.mercadolibre.cl%2Ftrotadora-electrica-ten-series-tm60-plegable-2-hp-12-kmh-negro%2Fp%2FMLC61642965%3Fmatt_event_ts%3D1785275657891%26matt_d2id%3Df8de5277-e2a6-497b-ae7e-0c97af536eee%26matt_tracing_id%3D2e2d5a6d-1125-43f7-b6c8-2290e3c7b566%23polycard_client%3Drecommendations_home_affiliate-profile%26reco_backend%3Ditem_decorator%26reco_client%3Dhome_affiliate-profile%26matt_tool_id%3D82210482%26reco_item_pos%3D0%26source%3Daffiliate-profile%26reco_backend_type%3Dfunction%26reco_id%3D24e259d0-5ae5-4b01-ad9d-2e9d46c69d96%26tracking_id%3D5e563bf1-1fb3-4e00-8645-40b9f43a5cff%26c_uid%3D9583c421-5881-4b88-b211-4fe50dea5e15%26c_id%3D%252Fhome%252Fcard-featured%252Felement&adj_campaign=social&adj_t=1y8rwb1z',
+    publishedAt: '2026-07-28'
   }
 ];
