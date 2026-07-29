@@ -1,7 +1,34 @@
 (() => {
   'use strict';
 
-  const offers = Array.isArray(window.OFFERS) ? window.OFFERS.filter((offer) => offer.active !== false) : [];
+  const metaQuestOffer = {
+    id: 'meta-quest-3s-128gb',
+    category: 'Tecnología',
+    featured: false,
+    active: true,
+    brand: 'Meta',
+    name: 'Quest 3S',
+    variant: 'Blanco · 128 GB · Controles incluidos',
+    title: 'Meta Quest 3S 128 GB con controles',
+    shortDescription: 'Visor inalámbrico de realidad virtual y mixta con procesador Snapdragon XR2 Gen 2, audio 3D, controles Touch Plus y resolución de 1832 × 1920 por ojo.',
+    price: 459990,
+    oldPrice: 599990,
+    currency: 'CLP',
+    badge: '23% OFF · Más vendido',
+    score: 9.3,
+    image: 'assets/meta-quest-3s.svg',
+    imageFallback: 'assets/meta-quest-3s.svg',
+    specs: [
+      { label: 'Almacenamiento', value: '128 GB' },
+      { label: 'Resolución', value: '1832 × 1920 por ojo' },
+      { label: 'Procesador', value: 'Snapdragon XR2 Gen 2' },
+      { label: 'Controles', value: 'Touch Plus incluidos' }
+    ]
+  };
+
+  const sourceOffers = Array.isArray(window.OFFERS) ? [...window.OFFERS] : [];
+  if (!sourceOffers.some((offer) => offer.id === metaQuestOffer.id)) sourceOffers.push(metaQuestOffer);
+  const offers = sourceOffers.filter((offer) => offer.active !== false);
   const formatPrice = (value) => new Intl.NumberFormat('es-CL').format(Number(value) || 0);
   const offerRoute = (id) => `/oferta/${encodeURIComponent(id)}/`;
   const isTikTok = /tiktok|musical_ly|bytedance|trill/i.test(navigator.userAgent || '');
