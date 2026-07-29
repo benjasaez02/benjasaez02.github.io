@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://ofertasflashcl.github.io/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://ofertasflashcl.github.io/</loc><lastmod>2026-07-29</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://ofertasflashcl.github.io/oferta/poco-c85/</loc><lastmod>2026-07-29</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ofertasflashcl.github.io/oferta/moto-g86-power-5g/</loc><lastmod>2026-07-29</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ofertasflashcl.github.io/oferta/meta-quest-3s-128gb/</loc><lastmod>2026-07-29</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ofertasflashcl.github.io/oferta/blik-air950/</loc><lastmod>2026-07-29</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ofertasflashcl.github.io/oferta/trotadora-ten-series-tm60/</loc><lastmod>2026-07-29</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ofertasflashcl.github.io/oferta/trotadora-ten-series-tm40-lite/</loc><lastmod>2026-07-29</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ofertasflashcl.github.io/oferta/secador-homen-5-en-1/</loc><lastmod>2026-07-29</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
 </urlset>
