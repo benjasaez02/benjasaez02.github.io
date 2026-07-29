@@ -32,6 +32,11 @@
   }
 
   const routeUrl = new URL(`/oferta/${encodeURIComponent(offer.id)}/`, location.origin).href;
+  const resolveAsset = (asset) => {
+    if (!asset) return '/assets/phone-hero.svg';
+    if (/^(?:https?:)?\/\//i.test(asset) || asset.startsWith('/')) return asset;
+    return `/${asset.replace(/^\.\//, '')}`;
+  };
   const buildAndroidIntent = (url) => {
     try {
       const parsed = new URL(url);
@@ -48,7 +53,7 @@
   image.src = offer.image;
   image.alt = offer.title;
   image.referrerPolicy = 'no-referrer';
-  image.onerror = () => { image.onerror = null; image.src = offer.imageFallback || '/assets/phone-hero.svg'; };
+  image.onerror = () => { image.onerror = null; image.src = resolveAsset(offer.imageFallback); };
   price.textContent = formatPrice(offer.price);
   badge.textContent = offer.badge || 'Oferta seleccionada';
   manual.value = routeUrl;
