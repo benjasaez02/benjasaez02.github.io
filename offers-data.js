@@ -106,5 +106,32 @@ window.OFFERS = [
     webUrl: 'https://www.mercadolibre.cl/trotadora-tm40-lite-ten-series/p/MLC53544555?matt_event_ts=1785283022947&matt_d2id=4140b4f5-3731-496d-80a1-fc7ef30615bd&matt_tracing_id=c9729c9f-6c27-4517-a469-634d2c505cee#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=82210482&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e95e0ccb-624f-4945-8bb9-7b990efbba2c&tracking_id=2b05f115-67a7-4775-b15d-50c9f27237c8&c_id=%2Fhome%2Fcard-featured%2Felement&c_uid=8bc3a1b7-3136-43f6-9c95-fa04daac98fa',
     affiliateUrl: 'https://ddnf.adj.st/webview/?url=https%3A%2F%2Fwww.mercadolibre.cl%2Ftrotadora-tm40-lite-ten-series%2Fp%2FMLC53544555%3Fmatt_event_ts%3D1785283022947%26matt_d2id%3D4140b4f5-3731-496d-80a1-fc7ef30615bd%26matt_tracing_id%3Dc9729c9f-6c27-4517-a469-634d2c505cee%23polycard_client%3Drecommendations_home_affiliate-profile%26reco_backend%3Ditem_decorator%26reco_client%3Dhome_affiliate-profile%26matt_tool_id%3D82210482%26reco_item_pos%3D0%26source%3Daffiliate-profile%26reco_backend_type%3Dfunction%26reco_id%3De95e0ccb-624f-4945-8bb9-7b990efbba2c%26tracking_id%3D2b05f115-67a7-4775-b15d-50c9f27237c8%26c_id%3D%252Fhome%252Fcard-featured%252Felement%26c_uid%3D8bc3a1b7-3136-43f6-9c95-fa04daac98fa&adj_t=1y8rwb1z&adj_campaign=social',
     publishedAt: '2026-07-28'
+  },
+  {
+    id: 'secador-homen-5-en-1',
+    category: 'Belleza y Cuidado Personal',
+    featured: false,
+    active: true,
+    brand: 'Homen',
+    name: 'Secador Pro 5 en 1',
+    variant: 'Beige · 5 accesorios · 220 V',
+    title: 'Secador y moldeador Homen 5 en 1',
+    shortDescription: 'Seca, alisa, da volumen y crea ondas con un solo equipo: motor brushless de alta velocidad, tecnología iónica anti-frizz y cinco accesorios intercambiables.',
+    price: 69990,
+    oldPrice: 149990,
+    currency: 'CLP',
+    badge: '53% OFF · Más vendido',
+    score: 9.0,
+    image: 'assets/hair-styler.svg',
+    imageFallback: 'assets/hair-styler.svg',
+    specs: [
+      { label: 'Accesorios', value: '5 en 1' },
+      { label: 'Motor', value: '110.000 RPM' },
+      { label: 'Potencia', value: '1200 W' },
+      { label: 'Velocidades', value: '3 niveles' }
+    ],
+    webUrl: 'https://www.mercadolibre.cl/secador-de-pelo-5-en-1-multifuncion-homen-profesional-de-alta-velocidad-anti-frizz/p/MLC69968655?matt_event_ts=1785332028818&matt_d2id=a8e9a47b-6a17-48f8-bf68-cff84a36d97a&matt_tracing_id=8cce2c6f-af05-45bd-b2aa-a3e5dd36678b#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=82210482&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=8b4b9205-d29b-4be7-ad7c-d2c47ef397dc&tracking_id=22747657-91b7-4d41-b788-a38a0343457f&c_uid=1fbfc71f-96e8-4181-86f4-5f385425a350&c_id=%2Fhome%2Fcard-featured%2Felement',
+    affiliateUrl: 'https://ddnf.adj.st/webview/?adj_campaign=social&adj_t=1y8rwb1z&url=https%3A%2F%2Fwww.mercadolibre.cl%2Fsecador-de-pelo-5-en-1-multifuncion-homen-profesional-de-alta-velocidad-anti-frizz%2Fp%2FMLC69968655%3Fmatt_event_ts%3D1785332028818%26matt_d2id%3Da8e9a47b-6a17-48f8-bf68-cff84a36d97a%26matt_tracing_id%3D8cce2c6f-af05-45bd-b2aa-a3e5dd36678b%23polycard_client%3Drecommendations_home_affiliate-profile%26reco_backend%3Ditem_decorator%26reco_client%3Dhome_affiliate-profile%26matt_tool_id%3D82210482%26reco_item_pos%3D0%26source%3Daffiliate-profile%26reco_backend_type%3Dfunction%26reco_id%3D8b4b9205-d29b-4be7-ad7c-d2c47ef397dc%26tracking_id%3D22747657-91b7-4d41-b788-a38a0343457f%26c_uid%3D1fbfc71f-96e8-4181-86f4-5f385425a350%26c_id%3D%252Fhome%252Fcard-featured%252Felement',
+    publishedAt: '2026-07-29'
   }
 ];
