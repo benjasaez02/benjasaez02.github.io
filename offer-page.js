@@ -9,7 +9,6 @@
   const offer = offers.find((item) => item.id === requestedId) || offers.find((item) => item.featured) || offers[0];
   const ua = navigator.userAgent || '';
   const isTikTok = /tiktok|musical_ly|bytedance|trill/i.test(ua);
-  const isAndroid = /android/i.test(ua);
   const formatPrice = (value) => '$' + new Intl.NumberFormat('es-CL').format(Number(value) || 0);
 
   const title = document.getElementById('product-title');
@@ -20,10 +19,11 @@
   const environment = document.getElementById('environment');
   const manual = document.getElementById('manual-url');
   const appButton = document.getElementById('app-button');
-  const webButton = document.getElementById('web-button');
   const affiliateButton = document.getElementById('affiliate-button');
-  const directAppButton = document.getElementById('direct-app-button');
   const tiktokStatus = document.getElementById('tiktok-status');
+  const normalStatus = document.getElementById('normal-status');
+  const normalPanelText = document.querySelector('.normal-panel > p');
+  const legalNotice = document.querySelector('.legal');
 
   if (!offer) {
     title.textContent = 'No encontramos esta oferta';
@@ -39,16 +39,6 @@
     return `/${asset.replace(/^\.\//, '')}`;
   };
 
-  const buildMercadoLibreIntent = (url) => {
-    try {
-      const parsed = new URL(url);
-      const target = parsed.host + parsed.pathname + parsed.search;
-      return `intent://${target}#Intent;scheme=${parsed.protocol.replace(':', '')};package=com.mercadolibre;S.browser_fallback_url=${encodeURIComponent(url)};end`;
-    } catch (_) {
-      return url;
-    }
-  };
-
   document.title = `${offer.title} | Ofertas Flash Chile`;
   title.textContent = offer.title;
   variant.textContent = offer.variant || '';
@@ -60,15 +50,19 @@
   badge.textContent = offer.badge || 'Oferta seleccionada';
   manual.value = routeUrl;
 
-  const directAppUrl = isAndroid ? buildMercadoLibreIntent(offer.webUrl) : offer.webUrl;
-  appButton.href = offer.affiliateUrl || offer.webUrl;
-  webButton.href = offer.webUrl;
-  affiliateButton.href = offer.affiliateUrl || offer.webUrl;
-  directAppButton.href = directAppUrl;
-  [appButton, webButton, affiliateButton, directAppButton].forEach((link) => {
+  const affiliateUrl = offer.affiliateUrl || offer.webUrl;
+  [appButton, affiliateButton].filter(Boolean).forEach((link) => {
+    link.href = affiliateUrl;
     link.target = '_self';
     link.rel = 'nofollow sponsored';
   });
+
+  if (normalPanelText) {
+    normalPanelText.textContent = 'Continúa a Mercado Libre mediante nuestro enlace afiliado para revisar el precio, stock, vendedor y condiciones de compra.';
+  }
+  if (legalNotice) {
+    legalNotice.textContent = 'Aviso de afiliación: podemos recibir una comisión si compras mediante nuestros enlaces, sin aumentar el precio para ti. La compra, el pago, el despacho y la garantía se realizan directamente en Mercado Libre. Precio y stock sujetos a cambios.';
+  }
 
   if (isTikTok) {
     document.body.classList.add('tiktok-mode');
@@ -103,25 +97,19 @@
     await copyRoute(statusElement);
   }
 
-  document.getElementById('share-button').addEventListener('click', () => shareOffer(tiktokStatus));
-  document.getElementById('copy-button').addEventListener('click', () => copyRoute(tiktokStatus));
-  document.getElementById('select-button').addEventListener('click', () => {
+  document.getElementById('share-button')?.addEventListener('click', () => shareOffer(tiktokStatus));
+  document.getElementById('copy-button')?.addEventListener('click', () => copyRoute(tiktokStatus));
+  document.getElementById('select-button')?.addEventListener('click', () => {
     manual.focus();
     manual.select();
     tiktokStatus.textContent = 'Enlace seleccionado. Mantén presionado y toca “Copiar”.';
   });
-  document.getElementById('normal-share-button').addEventListener('click', () => shareOffer(document.getElementById('normal-status')));
+  document.getElementById('normal-share-button')?.addEventListener('click', () => shareOffer(normalStatus));
 
-  affiliateButton.addEventListener('click', () => {
-    tiktokStatus.textContent = 'Intentando abrir el enlace afiliado. TikTok puede bloquearlo.';
+  affiliateButton?.addEventListener('click', () => {
+    tiktokStatus.textContent = 'Abriendo Mercado Libre mediante el enlace afiliado…';
   });
-  directAppButton.addEventListener('click', () => {
-    tiktokStatus.textContent = 'Intentando abrir la app directamente. Si falla, usa ⋯ → Abrir en navegador.';
-  });
-  appButton.addEventListener('click', () => {
-    document.getElementById('normal-status').textContent = 'Abriendo Mercado Libre con el enlace afiliado…';
-  });
-  webButton.addEventListener('click', () => {
-    document.getElementById('normal-status').textContent = 'Abriendo la publicación web exacta…';
+  appButton?.addEventListener('click', () => {
+    normalStatus.textContent = 'Abriendo Mercado Libre mediante el enlace afiliado…';
   });
 })();
