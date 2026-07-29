@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Visor de realidad virtual Meta Quest 3S</title>
+  <desc id="desc">Ilustración estilizada de un visor blanco de realidad virtual con dos controles.</desc>
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#cfd4dc"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#232a39"/>
+      <stop offset="1" stop-color="#080a10"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="28" stdDeviation="24" flood-color="#000" flood-opacity=".38"/>
+    </filter>
+  </defs>
+  <ellipse cx="450" cy="548" rx="310" ry="42" fill="#000" opacity=".2"/>
+  <g filter="url(#shadow)">
+    <path d="M245 190c35-52 374-52 410 0l38 178c7 34-15 68-49 76-121 29-267 29-388 0-34-8-56-42-49-76z" fill="url(#body)" stroke="#eef1f5" stroke-width="10"/>
+    <path d="M285 220c55-25 275-25 330 0l24 122c-99 22-279 22-378 0z" fill="url(#glass)"/>
+    <g fill="#101521" stroke="#50596c" stroke-width="7">
+      <circle cx="335" cy="273" r="25"/><circle cx="410" cy="260" r="22"/><circle cx="490" cy="260" r="22"/><circle cx="565" cy="273" r="25"/>
+    </g>
+    <path d="M245 234c-68 0-120 47-120 108v48" fill="none" stroke="#dfe3e9" stroke-width="28" stroke-linecap="round"/>
+    <path d="M655 234c68 0 120 47 120 108v48" fill="none" stroke="#dfe3e9" stroke-width="28" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(120 350) rotate(-15 95 100)" filter="url(#shadow)">
+    <ellipse cx="95" cy="72" rx="68" ry="76" fill="none" stroke="#f3f5f8" stroke-width="22"/>
+    <rect x="68" y="105" width="55" height="145" rx="28" fill="url(#body)"/>
+    <circle cx="96" cy="128" r="9" fill="#161b26"/>
+  </g>
+  <g transform="translate(590 350) rotate(15 95 100)" filter="url(#shadow)">
+    <ellipse cx="95" cy="72" rx="68" ry="76" fill="none" stroke="#f3f5f8" stroke-width="22"/>
+    <rect x="68" y="105" width="55" height="145" rx="28" fill="url(#body)"/>
+    <circle cx="96" cy="128" r="9" fill="#161b26"/>
+  </g>
+  <path d="M355 500c62 24 128 24 190 0" fill="none" stroke="#9274ff" stroke-width="8" stroke-linecap="round" opacity=".75"/>
+</svg>
