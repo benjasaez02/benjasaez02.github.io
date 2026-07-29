@@ -50,8 +50,16 @@
   badge.textContent = offer.badge || 'Oferta seleccionada';
   manual.value = routeUrl;
 
-  const affiliateUrl = offer.affiliateUrl || offer.webUrl;
+  const affiliateUrl = String(offer.affiliateUrl || '').trim();
   [appButton, affiliateButton].filter(Boolean).forEach((link) => {
+    if (!affiliateUrl) {
+      link.removeAttribute('href');
+      link.setAttribute('aria-disabled', 'true');
+      link.style.opacity = '0.55';
+      link.style.pointerEvents = 'none';
+      link.textContent = 'Enlace afiliado temporalmente no disponible';
+      return;
+    }
     link.href = affiliateUrl;
     link.target = '_self';
     link.rel = 'nofollow sponsored';
