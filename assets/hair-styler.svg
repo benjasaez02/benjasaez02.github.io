@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Secador y moldeador de pelo 5 en 1</title>
+  <desc id="desc">Ilustración beige de un moldeador de pelo con cinco accesorios intercambiables.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#171421"/><stop offset="1" stop-color="#090a10"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1dc"/><stop offset=".5" stop-color="#d9bfa3"/><stop offset="1" stop-color="#a98369"/></linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f7fb"/><stop offset=".45" stop-color="#7f8390"/><stop offset="1" stop-color="#292c36"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="34" stdDeviation="26" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+  <rect width="1200" height="900" rx="64" fill="url(#bg)"/>
+  <circle cx="600" cy="410" r="340" fill="#9274ff" opacity=".12"/>
+  <circle cx="600" cy="410" r="245" fill="#ffe600" opacity=".05"/>
+  <g filter="url(#shadow)">
+    <g transform="translate(488 102)">
+      <rect x="53" y="175" width="118" height="470" rx="58" fill="url(#body)" stroke="#fff" stroke-opacity=".22" stroke-width="5"/>
+      <rect x="67" y="548" width="90" height="67" rx="30" fill="#b19077" opacity=".7"/>
+      <circle cx="112" cy="205" r="110" fill="url(#body)" stroke="#fff" stroke-opacity=".22" stroke-width="5"/>
+      <circle cx="112" cy="205" r="75" fill="#171820" stroke="url(#metal)" stroke-width="18"/>
+      <circle cx="112" cy="205" r="45" fill="#08090d"/>
+      <circle cx="112" cy="205" r="26" fill="#272a34"/>
+      <circle cx="112" cy="390" r="15" fill="#272a34" stroke="#f8e6d0" stroke-width="6"/>
+      <rect x="91" y="433" width="42" height="67" rx="21" fill="#2b2e38"/>
+      <path d="M77 620h70l-7 60H84z" fill="#2c2f39"/>
+      <path d="M96 680v70" stroke="#5b5e69" stroke-width="16" stroke-linecap="round"/>
+    </g>
+    <g fill="url(#body)" stroke="#fff" stroke-opacity=".18" stroke-width="4">
+      <g transform="translate(130 195)"><rect x="0" y="65" width="135" height="210" rx="52"/><path d="M16 65h103L94 0H41z"/><rect x="18" y="275" width="99" height="45" rx="20" fill="#22242d"/></g>
+      <g transform="translate(300 170)"><rect x="15" y="10" width="105" height="280" rx="49" fill="#1e2028"/><path d="M25 30h85v235H25z" fill="#343741" stroke="none"/><path d="M34 30v235M51 30v235M68 30v235M85 30v235M102 30v235" stroke="#08090d" stroke-width="8"/><rect x="20" y="290" width="95" height="44" rx="20"/></g>
+      <g transform="translate(820 170)"><rect x="15" y="10" width="105" height="280" rx="49" fill="#1e2028"/><path d="M25 30h85v235H25z" fill="#343741" stroke="none"/><path d="M34 30v235M51 30v235M68 30v235M85 30v235M102 30v235" stroke="#08090d" stroke-width="8"/><rect x="20" y="290" width="95" height="44" rx="20"/></g>
+      <g transform="translate(965 205)"><rect x="0" y="85" width="135" height="190" rx="50"/><path d="M18 85h99L100 12H35z"/><rect x="18" y="275" width="99" height="45" rx="20" fill="#22242d"/></g>
+      <g transform="translate(155 570)"><path d="M0 55Q0 0 55 0h180q55 0 55 55v85q0 55-55 55H55Q0 195 0 140z"/><path d="M55 45h180v105H55z" fill="#282a33" stroke="none"/><path d="M76 48v98M101 48v98M126 48v98M151 48v98M176 48v98M201 48v98" stroke="#0b0c10" stroke-width="8"/></g>
+    </g>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="600" y="815" fill="#f7f8fc" font-size="45" font-weight="800">5 EN 1 · MOTOR BRUSHLESS</text>
+    <text x="600" y="860" fill="#b7bbca" font-size="25" font-weight="700" letter-spacing="5">SECADO · ONDAS · ALISADO · ANTI-FRIZZ</text>
+  </g>
+</svg>
