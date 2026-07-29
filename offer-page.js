@@ -23,6 +23,7 @@
   const webButton = document.getElementById('web-button');
   const affiliateButton = document.getElementById('affiliate-button');
   const directAppButton = document.getElementById('direct-app-button');
+  const tiktokStatus = document.getElementById('tiktok-status');
 
   if (!offer) {
     title.textContent = 'No encontramos esta oferta';
@@ -37,14 +38,59 @@
     if (/^(?:https?:)?\/\//i.test(asset) || asset.startsWith('/')) return asset;
     return `/${asset.replace(/^\.\//, '')}`;
   };
-  const buildAndroidIntent = (url) => {
+
+  const buildIntent = (url, packageName = '') => {
     try {
       const parsed = new URL(url);
       const target = parsed.host + parsed.pathname + parsed.search;
-      return `intent://${target}#Intent;scheme=https;package=com.mercadolibre;S.browser_fallback_url=${encodeURIComponent(url)};end`;
+      const packagePart = packageName ? `package=${packageName};` : '';
+      return `intent://${target}#Intent;scheme=${parsed.protocol.replace(':', '')};action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;${packagePart}S.browser_fallback_url=${encodeURIComponent(url)};end`;
     } catch (_) {
       return url;
     }
+  };
+
+  const createBrowserEscapeButtons = () => {
+    if (!isAndroid) return [];
+    const existingGrid = document.querySelector('.tiktok-panel .experimental .action-grid');
+    const experimental = existingGrid?.parentElement;
+    if (!existingGrid || !experimental) return [];
+
+    const hint = document.createElement('p');
+    hint.className = 'browser-escape-hint';
+    hint.textContent = 'Prueba primero tu navegador predeterminado. Si TikTok lo bloquea, intenta abrir Chrome directamente.';
+
+    const grid = document.createElement('div');
+    grid.className = 'action-grid browser-escape-grid';
+
+    const defaultBrowserButton = document.createElement('a');
+    defaultBrowserButton.id = 'default-browser-button';
+    defaultBrowserButton.className = 'action violet';
+    defaultBrowserButton.href = buildIntent(routeUrl);
+    defaultBrowserButton.target = '_self';
+    defaultBrowserButton.rel = 'nofollow';
+    defaultBrowserButton.textContent = 'Abrir en navegador predeterminado';
+
+    const chromeButton = document.createElement('a');
+    chromeButton.id = 'chrome-button';
+    chromeButton.className = 'action secondary';
+    chromeButton.href = buildIntent(routeUrl, 'com.android.chrome');
+    chromeButton.target = '_self';
+    chromeButton.rel = 'nofollow';
+    chromeButton.textContent = 'Abrir en Chrome';
+
+    grid.append(defaultBrowserButton, chromeButton);
+    experimental.insertBefore(hint, existingGrid);
+    experimental.insertBefore(grid, existingGrid);
+
+    defaultBrowserButton.addEventListener('click', () => {
+      tiktokStatus.textContent = 'Solicitando el navegador predeterminado de Android. Si TikTok lo bloquea, prueba Chrome o usa ⋯ → Abrir en navegador.';
+    });
+    chromeButton.addEventListener('click', () => {
+      tiktokStatus.textContent = 'Solicitando Chrome. Si no se abre, usa ⋯ → Abrir en navegador.';
+    });
+
+    return [defaultBrowserButton, chromeButton];
   };
 
   document.title = `${offer.title} | Ofertas Flash Chile`;
@@ -58,12 +104,13 @@
   badge.textContent = offer.badge || 'Oferta seleccionada';
   manual.value = routeUrl;
 
-  const directAppUrl = isAndroid ? buildAndroidIntent(offer.webUrl) : offer.webUrl;
+  const browserEscapeButtons = createBrowserEscapeButtons();
+  const directAppUrl = isAndroid ? buildIntent(offer.webUrl, 'com.mercadolibre') : offer.webUrl;
   appButton.href = offer.affiliateUrl || offer.webUrl;
   webButton.href = offer.webUrl;
   affiliateButton.href = offer.affiliateUrl || offer.webUrl;
   directAppButton.href = directAppUrl;
-  [appButton, webButton, affiliateButton, directAppButton].forEach((link) => {
+  [appButton, webButton, affiliateButton, directAppButton, ...browserEscapeButtons].forEach((link) => {
     link.target = '_self';
     link.rel = 'nofollow sponsored';
   });
@@ -79,7 +126,7 @@
   async function copyRoute(statusElement) {
     try {
       await navigator.clipboard.writeText(routeUrl);
-      statusElement.textContent = 'Enlace de esta oferta copiado. Pégalo en Chrome.';
+      statusElement.textContent = 'Enlace de esta oferta copiado. Pégalo en tu navegador.';
     } catch (_) {
       manual.focus();
       manual.select();
@@ -101,20 +148,20 @@
     await copyRoute(statusElement);
   }
 
-  document.getElementById('share-button').addEventListener('click', () => shareOffer(document.getElementById('tiktok-status')));
-  document.getElementById('copy-button').addEventListener('click', () => copyRoute(document.getElementById('tiktok-status')));
+  document.getElementById('share-button').addEventListener('click', () => shareOffer(tiktokStatus));
+  document.getElementById('copy-button').addEventListener('click', () => copyRoute(tiktokStatus));
   document.getElementById('select-button').addEventListener('click', () => {
     manual.focus();
     manual.select();
-    document.getElementById('tiktok-status').textContent = 'Enlace seleccionado. Mantén presionado y toca “Copiar”.';
+    tiktokStatus.textContent = 'Enlace seleccionado. Mantén presionado y toca “Copiar”.';
   });
   document.getElementById('normal-share-button').addEventListener('click', () => shareOffer(document.getElementById('normal-status')));
 
   affiliateButton.addEventListener('click', () => {
-    document.getElementById('tiktok-status').textContent = 'Intentando abrir el enlace afiliado. TikTok puede bloquearlo.';
+    tiktokStatus.textContent = 'Intentando abrir el enlace afiliado. TikTok puede bloquearlo.';
   });
   directAppButton.addEventListener('click', () => {
-    document.getElementById('tiktok-status').textContent = 'Intentando abrir la app directamente. Si falla, usa ⋯ → Abrir en navegador.';
+    tiktokStatus.textContent = 'Intentando abrir la app directamente. Si falla, usa el navegador externo o ⋯ → Abrir en navegador.';
   });
   appButton.addEventListener('click', () => {
     document.getElementById('normal-status').textContent = 'Abriendo Mercado Libre con el enlace afiliado…';
