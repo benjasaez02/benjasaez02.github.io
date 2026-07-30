@@ -9,7 +9,7 @@
     variant: 'Gris claro · Mujer · Tallas 35,5 a 40 CL',
     title: 'Zapatillas Naturalizer Taryn gris para mujer',
     shortDescription: 'Zapatillas casuales de caña baja con ajuste de velcro, plantilla acolchada, suela TPR antideslizante y tecnología de comodidad N5 Contour.',
-    price: 17400,
+    price: 16820,
     oldPrice: 58000,
     currency: 'CLP',
     badge: '70% OFF · Liquidación',
