@@ -1,0 +1,14 @@
+name = "ofertasflash-meli-connector"
+main = "src/index.ts"
+compatibility_date = "2026-07-29"
+
+[vars]
+PUBLIC_BASE_URL = "https://ofertasflash-meli-connector.TU_SUBDOMINIO.workers.dev"
+ML_REDIRECT_URI = "https://ofertasflash-meli-connector.TU_SUBDOMINIO.workers.dev/oauth/callback"
+ML_AUTH_URL = "https://auth.mercadolibre.cl/authorization"
+ML_API_BASE = "https://api.mercadolibre.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ofertasflash-meli"
+database_id = "REEMPLAZA_CON_EL_ID_DE_D1"
