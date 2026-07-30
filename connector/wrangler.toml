@@ -1,0 +1,3 @@
+name = "ofertasflash-meli-connector"
+main = "src/index.ts"
+compatibility_date = "2026-07-29"
