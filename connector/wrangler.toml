@@ -5,6 +5,7 @@ compatibility_date = "2026-07-29"
 [vars]
 PUBLIC_BASE_URL = "https://ofertasflash-meli-connector.benjasaez02.workers.dev"
 ML_REDIRECT_URI = "https://ofertasflash-meli-connector.benjasaez02.workers.dev/oauth/callback"
+ML_CLIENT_ID = "8372405742327100"
 
 [[d1_databases]]
 binding = "DB"
