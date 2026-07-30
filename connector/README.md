@@ -26,6 +26,32 @@ Backend de solo lectura orientado a **Ofertas Flash Chile**. Permite autorizar u
 
 La API oficial no garantiza acceso al mismo feed personalizado que aparece en la pantalla de inicio de la app. Este conector trabaja con búsquedas, publicaciones, catálogo y recursos autorizados.
 
+## Ruta recomendada sin terminal
+
+Esta es la opción más cómoda desde celular o navegador:
+
+1. En Cloudflare abre **Workers & Pages** y conecta el repositorio `ofertasflashcl/ofertasflashcl.github.io`.
+2. Usa `connector` como directorio raíz del proyecto.
+3. Crea una base D1 llamada `ofertasflash-meli` y agrégala al Worker con el binding exacto `DB`.
+4. Ejecuta `schema.sql` desde la consola de D1.
+5. Agrega estas variables públicas al Worker:
+
+```text
+PUBLIC_BASE_URL=https://TU-WORKER.workers.dev
+ML_REDIRECT_URI=https://TU-WORKER.workers.dev/oauth/callback
+ML_AUTH_URL=https://auth.mercadolibre.cl/authorization
+ML_API_BASE=https://api.mercadolibre.com
+```
+
+6. Agrega como secretos, nunca como variables visibles:
+
+```text
+ML_CLIENT_ID
+ML_CLIENT_SECRET
+CONNECTOR_API_KEY
+TOKEN_ENCRYPTION_KEY
+```
+
 ## 1. Crear la aplicación de Mercado Libre
 
 1. Entra al portal de desarrolladores de Mercado Libre y crea una aplicación.
@@ -39,7 +65,7 @@ https://TU-WORKER.workers.dev/oauth/callback
 
 La URL debe coincidir exactamente con `ML_REDIRECT_URI`.
 
-## 2. Crear el Worker y D1
+## 2. Alternativa mediante Wrangler
 
 Requisitos: Node.js 20+, una cuenta gratuita de Cloudflare y Wrangler.
 
@@ -50,7 +76,7 @@ npx wrangler login
 npx wrangler d1 create ofertasflash-meli
 ```
 
-Copia `wrangler.toml.example` como `wrangler.toml` y reemplaza el `database_id` y el subdominio.
+Si prefieres manejar la vinculación D1 por archivo, copia `wrangler.toml.example` como `wrangler.toml` y reemplaza el `database_id` y el subdominio.
 
 Inicializa la base:
 
@@ -58,7 +84,7 @@ Inicializa la base:
 npm run db:init:remote
 ```
 
-## 3. Configurar secretos
+## 3. Configurar secretos mediante Wrangler
 
 ```bash
 npx wrangler secret put ML_CLIENT_ID
