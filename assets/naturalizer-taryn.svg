@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-labelledby="title desc">
+  <title id="title">Zapatilla casual gris</title>
+  <desc id="desc">Ilustración estilizada de una zapatilla gris de perfil</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171a24"/>
+      <stop offset="1" stop-color="#090a10"/>
+    </linearGradient>
+    <linearGradient id="upper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d7d9dd"/>
+      <stop offset=".55" stop-color="#a9adb5"/>
+      <stop offset="1" stop-color="#7f848d"/>
+    </linearGradient>
+    <linearGradient id="sole" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f4f5"/>
+      <stop offset="1" stop-color="#c7c9ce"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="32" stdDeviation="26" flood-color="#000" flood-opacity=".42"/>
+    </filter>
+  </defs>
+  <rect width="900" height="650" rx="48" fill="url(#bg)"/>
+  <ellipse cx="458" cy="515" rx="310" ry="48" fill="#000" opacity=".28"/>
+  <g filter="url(#shadow)" transform="translate(65 95)">
+    <path d="M135 318c38-13 73-33 103-61 49-46 78-110 111-177 13-27 31-42 56-38 31 5 52 31 65 60 18 39 37 74 71 102 45 37 93 62 156 80 46 13 73 42 77 82 4 39-18 66-58 77-103 29-219 36-350 22-106-11-190-27-252-49-38-14-58-40-55-70 2-17 10-29 26-35z" fill="url(#upper)" stroke="#eef0f4" stroke-opacity=".4" stroke-width="5"/>
+    <path d="M219 261c52-44 92-96 121-157 13-27 27-43 42-48 6 52 30 100 71 145-83 39-160 59-234 60z" fill="#8f949d" opacity=".8"/>
+    <path d="M342 162c47 14 93 36 138 67" fill="none" stroke="#f4f4f5" stroke-width="16" stroke-linecap="round" opacity=".88"/>
+    <path d="M325 197c44 14 89 34 134 61" fill="none" stroke="#f4f4f5" stroke-width="14" stroke-linecap="round" opacity=".82"/>
+    <path d="M310 232c42 11 84 28 126 51" fill="none" stroke="#f4f4f5" stroke-width="12" stroke-linecap="round" opacity=".76"/>
+    <path d="M441 211c45 37 94 64 151 82" fill="none" stroke="#686d76" stroke-width="8" stroke-linecap="round" opacity=".8"/>
+    <path d="M129 377c180 34 372 42 575 15 37-5 61 8 69 36 7 26-8 47-42 56-218 56-428 47-631-26-37-13-51-34-42-60 8-22 31-29 71-21z" fill="url(#sole)" stroke="#fff" stroke-opacity=".55" stroke-width="5"/>
+    <path d="M132 429c177 42 375 47 592 14" fill="none" stroke="#91959d" stroke-width="10" stroke-linecap="round" opacity=".65"/>
+    <path d="M185 445l-14 31m52-23-13 33m55-25-12 35m59-28-9 36m64-30-7 37m68-34-4 37m70-38v37m72-42 5 36m69-42 9 34" stroke="#747982" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+    <path d="M491 125c24 8 45 25 61 49" fill="none" stroke="#eceef2" stroke-width="12" stroke-linecap="round" opacity=".7"/>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" text-anchor="middle">
+    <text x="450" y="578" fill="#f6f7fb" font-size="34" font-weight="800" letter-spacing="3">NATURALIZER TARYN</text>
+    <text x="450" y="615" fill="#aeb3bf" font-size="20" font-weight="700" letter-spacing="4">GRIS · CALZADO CASUAL</text>
+  </g>
+</svg>
