@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Generador privado de claves</title>
+  <style>
+    :root{color-scheme:dark;font-family:Inter,system-ui,sans-serif;background:#090b12;color:#f7f8ff}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 20% 10%,#5b37b84d,transparent 35%),#090b12}
+    main{width:min(720px,100%);padding:28px;border:1px solid #ffffff20;border-radius:24px;background:#151824;box-shadow:0 25px 70px #0008}
+    h1{font-size:clamp(2rem,8vw,3.6rem);line-height:1;margin:.2em 0}.lead{color:#c7cada;line-height:1.6}.notice{padding:14px 16px;border-radius:14px;background:#153827;color:#75f0b3;font-weight:700;margin:20px 0}
+    .field{margin:22px 0}.field label{display:block;font-weight:800;margin-bottom:9px}.value{font:600 14px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere;padding:15px;border-radius:14px;background:#080a10;border:1px solid #ffffff1d;min-height:70px}
+    .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}button{border:0;border-radius:12px;padding:13px 16px;font:800 15px system-ui;cursor:pointer;background:#7d55ff;color:white}button.secondary{background:#2b3040}small{color:#a8adbf;line-height:1.5;display:block;margin-top:18px}
+  </style>
+</head>
+<body>
+<main>
+  <p><strong>Ofertas Flash Chile</strong></p>
+  <h1>Claves del conector</h1>
+  <p class="lead">Se generan completamente dentro de este navegador. Esta página no realiza solicitudes de red ni almacena los valores.</p>
+  <div class="notice">Guarda ambas claves en tu gestor de contraseñas antes de cerrar esta pestaña.</div>
+
+  <div class="field">
+    <label>CONNECTOR_API_KEY</label>
+    <div id="apiKey" class="value"></div>
+    <div class="buttons"><button data-copy="apiKey">Copiar API Key</button></div>
+  </div>
+
+  <div class="field">
+    <label>TOKEN_ENCRYPTION_KEY</label>
+    <div id="encryptionKey" class="value"></div>
+    <div class="buttons"><button data-copy="encryptionKey">Copiar clave de cifrado</button></div>
+  </div>
+
+  <div class="buttons"><button id="regenerate" class="secondary">Generar claves nuevas</button></div>
+  <small>No uses la misma clave en ambos campos. Si regeneras, las anteriores dejan de mostrarse. La clave de cifrado tiene exactamente 32 bytes en Base64URL, como requiere el Worker.</small>
+</main>
+<script>
+  const base64url = bytes => {
+    let binary = '';
+    for (const byte of bytes) binary += String.fromCharCode(byte);
+    return btoa(binary).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/g,'');
+  };
+  const randomKey = () => {
+    const bytes = new Uint8Array(32);
+    crypto.getRandomValues(bytes);
+    return base64url(bytes);
+  };
+  const generate = () => {
+    document.getElementById('apiKey').textContent = randomKey();
+    document.getElementById('encryptionKey').textContent = randomKey();
+  };
+  document.querySelectorAll('[data-copy]').forEach(button => {
+    button.addEventListener('click', async () => {
+      const value = document.getElementById(button.dataset.copy).textContent;
+      await navigator.clipboard.writeText(value);
+      const old = button.textContent;
+      button.textContent = 'Copiado';
+      setTimeout(() => button.textContent = old, 1200);
+    });
+  });
+  document.getElementById('regenerate').addEventListener('click', generate);
+  generate();
+</script>
+</body>
+</html>
