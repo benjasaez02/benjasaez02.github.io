@@ -1,3 +1,12 @@
 name = "ofertasflash-meli-connector"
 main = "src/index.ts"
 compatibility_date = "2026-07-29"
+
+[vars]
+PUBLIC_BASE_URL = "https://ofertasflash-meli-connector.benjasaez02.workers.dev"
+ML_REDIRECT_URI = "https://ofertasflash-meli-connector.benjasaez02.workers.dev/oauth/callback"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ofertasflash-meli"
+database_id = "7bea7224-4459-4969-b117-d8fc100e6c66"
