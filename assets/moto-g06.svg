@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Motorola Moto G06 azul marino</title>
+  <desc id="desc">Ilustración del teléfono Moto G06 en color azul marino, vista frontal y trasera.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#161c31"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#344f78"/>
+      <stop offset=".48" stop-color="#173257"/>
+      <stop offset="1" stop-color="#08162b"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4ce4ff"/>
+      <stop offset=".48" stop-color="#3972ff"/>
+      <stop offset="1" stop-color="#7c43ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#3c88ff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#3c88ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000" flood-opacity=".48"/>
+    </filter>
+  </defs>
+  <rect width="900" height="620" rx="48" fill="url(#bg)"/>
+  <ellipse cx="450" cy="345" rx="330" ry="245" fill="url(#glow)"/>
+  <g filter="url(#shadow)">
+    <g transform="translate(194 76) rotate(-8 155 235)">
+      <rect x="0" y="0" width="310" height="486" rx="42" fill="url(#phone)" stroke="#6683aa" stroke-width="4"/>
+      <rect x="18" y="18" width="274" height="450" rx="31" fill="#0a1629" opacity=".18"/>
+      <rect x="34" y="34" width="104" height="135" rx="28" fill="#11233d" stroke="#6d84a5" stroke-width="3"/>
+      <circle cx="72" cy="78" r="25" fill="#050a13" stroke="#9cb1cf" stroke-width="5"/>
+      <circle cx="72" cy="78" r="10" fill="#355b8d"/>
+      <circle cx="112" cy="125" r="18" fill="#050a13" stroke="#9cb1cf" stroke-width="4"/>
+      <circle cx="112" cy="125" r="7" fill="#2b4d78"/>
+      <circle cx="73" cy="137" r="7" fill="#ffe7ad"/>
+      <path d="M119 280c-34 0-61 27-61 61s27 61 61 61c23 0 43-12 54-30-13 9-29 14-46 14-45 0-81-36-81-81 0-10 2-20 5-29 15-1 33 4 48 18 14 12 23 28 27 44 7-12 11-26 11-41 0-6-1-12-2-17-5 0-10 0-16 0Z" fill="#94acd0" opacity=".85"/>
+      <text x="155" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#b8c7de">moto g06</text>
+    </g>
+    <g transform="translate(440 56) rotate(7 155 245)">
+      <rect x="0" y="0" width="310" height="500" rx="44" fill="#090d17" stroke="#65718d" stroke-width="4"/>
+      <rect x="13" y="13" width="284" height="474" rx="34" fill="url(#screen)"/>
+      <path d="M13 377c68-97 133-122 196-84 34 21 61 15 88-17v211H13Z" fill="#0e1733" opacity=".5"/>
+      <path d="M13 274c77-90 141-105 194-46 28 31 58 35 90 12v247H13Z" fill="#172d76" opacity=".42"/>
+      <circle cx="155" cy="31" r="7" fill="#09101c" stroke="#8694b1" stroke-width="2"/>
+      <rect x="116" y="470" width="78" height="5" rx="3" fill="#dbe5ff" opacity=".85"/>
+    </g>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#fff">
+    <rect x="58" y="42" width="174" height="54" rx="27" fill="#2557d6" opacity=".9"/>
+    <text x="145" y="76" text-anchor="middle" font-size="22" font-weight="700">256 GB</text>
+    <rect x="655" y="488" width="187" height="58" rx="29" fill="#151b2b" stroke="#6da7ff" stroke-width="2"/>
+    <text x="748" y="524" text-anchor="middle" font-size="21" font-weight="700">Pantalla 120 Hz</text>
+  </g>
+</svg>
