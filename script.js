@@ -26,8 +26,35 @@
     ]
   };
 
+  const motoG06Offer = {
+    id: 'moto-g06-256gb',
+    category: 'Tecnología',
+    featured: false,
+    active: true,
+    brand: 'Motorola',
+    name: 'Moto G06',
+    variant: 'Azul marino · 256 GB · 4 GB RAM',
+    title: 'Motorola Moto G06 256 GB azul marino',
+    shortDescription: 'Celular de pantalla grande con 256 GB, cámara principal de 50 MP, batería de 5200 mAh y pantalla fluida de hasta 120 Hz.',
+    price: 112760,
+    oldPrice: 289990,
+    currency: 'CLP',
+    badge: '61% OFF · #1 más vendido',
+    score: 9.6,
+    image: 'assets/moto-g06.svg',
+    imageFallback: 'assets/moto-g06.svg',
+    specs: [
+      { label: 'Almacenamiento', value: '256 GB' },
+      { label: 'Memoria RAM', value: '4 GB' },
+      { label: 'Pantalla', value: '6,9″ · 120 Hz' },
+      { label: 'Batería', value: '5200 mAh' }
+    ]
+  };
+
   const sourceOffers = Array.isArray(window.OFFERS) ? [...window.OFFERS] : [];
-  if (!sourceOffers.some((offer) => offer.id === metaQuestOffer.id)) sourceOffers.push(metaQuestOffer);
+  [metaQuestOffer, motoG06Offer].forEach((newOffer) => {
+    if (!sourceOffers.some((offer) => offer.id === newOffer.id)) sourceOffers.push(newOffer);
+  });
   const offers = sourceOffers.filter((offer) => offer.active !== false);
   const formatPrice = (value) => new Intl.NumberFormat('es-CL').format(Number(value) || 0);
   const offerRoute = (id) => `/oferta/${encodeURIComponent(id)}/`;
@@ -77,6 +104,29 @@
   const count = document.getElementById('offer-count');
   const filterGroup = document.querySelector('.filter-group');
   const categories = ['Todas', ...new Set(offers.map((offer) => offer.category).filter(Boolean))];
+
+  function updateStaticHighlights() {
+    const strip = document.querySelector('.top-strip');
+    const stripCount = strip?.querySelector('span:nth-of-type(1)');
+    const stripOffers = strip?.querySelector('strong');
+    if (stripCount) stripCount.textContent = `${offers.length} ofertas activas`;
+    if (stripOffers) stripOffers.textContent = 'Moto G06 $112.760 · Naturalizer $16.820 · Air950 $19.990 · POCO $79.990 · Quest 3S $459.990';
+
+    const ticker = document.querySelector('.ticker-track');
+    if (ticker) {
+      ticker.innerHTML = '<span>MOTO G06 256 GB $112.760</span><i>✦</i><span>NATURALIZER TARYN $16.820</span><i>✦</i><span>AIR950 ANC + ENC $19.990</span><i>✦</i><span>CELULARES DESDE $79.990</span><i>✦</i><span>MOTO G06 256 GB $112.760</span><i>✦</i><span>META QUEST 3S 128 GB</span><i>✦</i><span>TROTADORAS DESDE $99.990</span><i>✦</i><span>BELLEZA 5 EN 1 $69.990</span>';
+    }
+
+    const banner = document.querySelector('.final-banner');
+    const bannerCopy = banner?.querySelector('div');
+    const bannerLink = banner?.querySelector('a');
+    if (bannerCopy) bannerCopy.innerHTML = '<span>NUEVA OFERTA · TECNOLOGÍA</span><h2>Moto G06 · 256 GB</h2><p>Pantalla de 120 Hz, cámara de 50 MP y batería de 5200 mAh por $112.760.</p>';
+    if (bannerLink) {
+      bannerLink.dataset.offerId = motoG06Offer.id;
+      bannerLink.href = offerRoute(motoG06Offer.id);
+      bannerLink.innerHTML = '<span>Ver oferta Moto G06</span><b>→</b>';
+    }
+  }
 
   function bindOfferLinks(root = document) {
     root.querySelectorAll('.js-offer-link').forEach((link) => {
@@ -165,6 +215,7 @@
     notice.querySelector('button')?.addEventListener('click', () => { notice.hidden = true; });
   }
 
+  updateStaticHighlights();
   buildFilters();
   renderOffers();
   bindOfferLinks(document);
