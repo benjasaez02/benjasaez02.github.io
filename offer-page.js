@@ -103,7 +103,7 @@
   }
   if (legalNotice) {
     const paymentCondition = offer.priceCondition && offer.regularOfferPrice
-      ? ` El precio de ${formatPrice(offer.price)} requiere ${String(offer.priceCondition).replace(/^Precio\s+/i, '').toLowerCase()}; ${offer.regularPriceCondition || 'sin esa condición'} se publica a ${formatPrice(offer.regularOfferPrice)}.`
+      ? ` El precio de ${formatPrice(offer.price)} requiere ${offer.paymentRequirement || 'cumplir la condición de pago indicada'}; ${offer.regularPriceCondition || 'sin esa condición'} se publica a ${formatPrice(offer.regularOfferPrice)}.`
       : '';
     legalNotice.textContent = `Aviso de afiliación: podemos recibir una comisión si compras mediante nuestros enlaces, sin aumentar el precio para ti.${paymentCondition} La compra, el pago, el despacho y la garantía se realizan directamente en ${retailer}. Precios, condiciones y stock sujetos a cambios.`;
   }
