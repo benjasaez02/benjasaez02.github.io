@@ -15,6 +15,8 @@
   const variant = document.getElementById('product-variant');
   const image = document.getElementById('product-image');
   const price = document.getElementById('product-price');
+  const priceLabel = document.getElementById('price-label') || document.querySelector('.price small');
+  const priceDetails = document.getElementById('price-details');
   const badge = document.getElementById('product-badge');
   const environment = document.getElementById('environment');
   const manual = document.getElementById('manual-url');
@@ -32,6 +34,7 @@
     return;
   }
 
+  const retailer = String(offer.retailer || 'Mercado Libre').trim();
   const routeUrl = new URL(`/oferta/${encodeURIComponent(offer.id)}/`, location.origin).href;
   const resolveAsset = (asset) => {
     if (!asset) return '/assets/phone-hero.svg';
@@ -42,13 +45,40 @@
   document.title = `${offer.title} | Ofertas Flash Chile`;
   title.textContent = offer.title;
   variant.textContent = offer.variant || '';
-  image.src = offer.image;
+  image.src = resolveAsset(offer.image);
   image.alt = offer.title;
   image.referrerPolicy = 'no-referrer';
   image.onerror = () => { image.onerror = null; image.src = resolveAsset(offer.imageFallback); };
   price.textContent = formatPrice(offer.price);
   badge.textContent = offer.badge || 'Oferta seleccionada';
   manual.value = routeUrl;
+
+  if (priceLabel) {
+    priceLabel.textContent = offer.priceCondition
+      ? String(offer.priceCondition).toUpperCase()
+      : 'PRECIO PUBLICADO';
+  }
+
+  if (priceDetails) {
+    priceDetails.replaceChildren();
+    if (offer.regularOfferPrice) {
+      const regular = document.createElement('span');
+      regular.textContent = `${offer.regularPriceCondition || 'Precio sin tarjeta'}: ${formatPrice(offer.regularOfferPrice)}`;
+      priceDetails.appendChild(regular);
+    }
+    if (offer.oldPrice) {
+      const reference = document.createElement('span');
+      reference.textContent = `Precio de referencia: ${formatPrice(offer.oldPrice)}`;
+      reference.style.color = '#747989';
+      priceDetails.appendChild(reference);
+    }
+    if (offer.priceCondition) {
+      const condition = document.createElement('span');
+      condition.textContent = 'El precio destacado depende del medio de pago indicado.';
+      condition.style.color = '#ffcc45';
+      priceDetails.appendChild(condition);
+    }
+  }
 
   const affiliateUrl = String(offer.affiliateUrl || '').trim();
   [appButton, affiliateButton].filter(Boolean).forEach((link) => {
@@ -65,11 +95,17 @@
     link.rel = 'nofollow sponsored';
   });
 
+  if (affiliateButton && affiliateUrl) affiliateButton.textContent = `Abrir enlace afiliado de ${retailer}`;
+  if (appButton && affiliateUrl) appButton.textContent = `Abrir oferta en ${retailer}`;
+
   if (normalPanelText) {
-    normalPanelText.textContent = 'Continúa a Mercado Libre mediante nuestro enlace afiliado para revisar el precio, stock, vendedor y condiciones de compra.';
+    normalPanelText.textContent = `Continúa a ${retailer} mediante nuestro enlace afiliado para revisar el precio, stock, vendedor y condiciones de compra.`;
   }
   if (legalNotice) {
-    legalNotice.textContent = 'Aviso de afiliación: podemos recibir una comisión si compras mediante nuestros enlaces, sin aumentar el precio para ti. La compra, el pago, el despacho y la garantía se realizan directamente en Mercado Libre. Precio y stock sujetos a cambios.';
+    const paymentCondition = offer.priceCondition && offer.regularOfferPrice
+      ? ` El precio de ${formatPrice(offer.price)} requiere ${String(offer.priceCondition).replace(/^Precio\s+/i, '').toLowerCase()}; ${offer.regularPriceCondition || 'sin esa condición'} se publica a ${formatPrice(offer.regularOfferPrice)}.`
+      : '';
+    legalNotice.textContent = `Aviso de afiliación: podemos recibir una comisión si compras mediante nuestros enlaces, sin aumentar el precio para ti.${paymentCondition} La compra, el pago, el despacho y la garantía se realizan directamente en ${retailer}. Precios, condiciones y stock sujetos a cambios.`;
   }
 
   if (isTikTok) {
@@ -115,9 +151,9 @@
   document.getElementById('normal-share-button')?.addEventListener('click', () => shareOffer(normalStatus));
 
   affiliateButton?.addEventListener('click', () => {
-    tiktokStatus.textContent = 'Abriendo Mercado Libre mediante el enlace afiliado…';
+    tiktokStatus.textContent = `Abriendo ${retailer} mediante el enlace afiliado…`;
   });
   appButton?.addEventListener('click', () => {
-    normalStatus.textContent = 'Abriendo Mercado Libre mediante el enlace afiliado…';
+    normalStatus.textContent = `Abriendo ${retailer} mediante el enlace afiliado…`;
   });
 })();
