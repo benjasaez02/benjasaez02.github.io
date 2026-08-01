@@ -56,6 +56,7 @@
     if (!sourceOffers.some((offer) => offer.id === newOffer.id)) sourceOffers.push(newOffer);
   });
   const offers = sourceOffers.filter((offer) => offer.active !== false);
+  const powerBankOffer = offers.find((offer) => offer.id === 'master-g-powerbank-20000mah');
   const formatPrice = (value) => new Intl.NumberFormat('es-CL').format(Number(value) || 0);
   const offerRoute = (id) => `/oferta/${encodeURIComponent(id)}/`;
   const isTikTok = /tiktok|musical_ly|bytedance|trill/i.test(navigator.userAgent || '');
@@ -77,6 +78,15 @@
     const oldPrice = offer.oldPrice
       ? `<del style="display:block;margin-bottom:2px;color:#777d8d;font-size:.75rem;font-weight:800">Antes $${formatPrice(offer.oldPrice)}</del>`
       : '';
+    const condition = offer.priceCondition
+      ? `<span style="display:block;margin-top:5px;color:#ffcc45;font-size:.66rem;font-weight:900">${safeText(offer.priceCondition)}</span>`
+      : '';
+    const regularOfferPrice = offer.regularOfferPrice
+      ? `<span style="display:block;margin-top:3px;color:#a6aabc;font-size:.68rem;font-weight:800">${safeText(offer.regularPriceCondition || 'Precio sin tarjeta')}: $${formatPrice(offer.regularOfferPrice)}</span>`
+      : '';
+    const retailer = offer.retailer || 'Mercado Libre';
+    const category = offer.retailer ? `${offer.category} · ${retailer}` : offer.category;
+    const priceLabel = offer.priceCondition ? 'PRECIO ESPECIAL' : 'PRECIO PUBLICADO';
 
     return `
       <article class="offer-card ${offer.featured ? 'featured' : ''} reveal" data-category="${safeText(offer.category)}">
@@ -87,14 +97,14 @@
           <span class="offer-score"><span>${safeText(offer.score || '—')}</span><small>NOTA</small></span>
         </div>
         <div class="offer-content">
-          <span class="offer-category">${safeText(offer.category)}</span>
+          <span class="offer-category">${safeText(category)}</span>
           <h3>${safeText(offer.title)}</h3>
           <p class="offer-variant">${safeText(offer.variant)}</p>
           <p class="offer-description">${safeText(offer.shortDescription)}</p>
           <div class="offer-specs">${specs}</div>
           <div class="offer-footer">
-            <div class="offer-price"><small>PRECIO PUBLICADO</small>${oldPrice}<strong>$${formatPrice(offer.price)}</strong></div>
-            <a class="offer-button js-offer-link" data-offer-id="${safeText(offer.id)}" href="${offerRoute(offer.id)}">Ver oferta exacta →</a>
+            <div class="offer-price"><small>${priceLabel}</small>${oldPrice}<strong>$${formatPrice(offer.price)}</strong>${condition}${regularOfferPrice}</div>
+            <a class="offer-button js-offer-link" data-offer-id="${safeText(offer.id)}" href="${offerRoute(offer.id)}">Ver oferta en ${safeText(retailer)} →</a>
           </div>
         </div>
       </article>`;
@@ -110,21 +120,23 @@
     const stripCount = strip?.querySelector('span:nth-of-type(1)');
     const stripOffers = strip?.querySelector('strong');
     if (stripCount) stripCount.textContent = `${offers.length} ofertas activas`;
-    if (stripOffers) stripOffers.textContent = 'Moto G06 $112.760 · Naturalizer $16.820 · Air950 $19.990 · POCO $79.990 · Quest 3S $459.990';
+    if (stripOffers) stripOffers.textContent = 'Power bank CMR $19.990 · Moto G06 $112.760 · Naturalizer $16.820 · Air950 $19.990 · POCO $79.990';
 
     const ticker = document.querySelector('.ticker-track');
     if (ticker) {
-      ticker.innerHTML = '<span>MOTO G06 256 GB $112.760</span><i>✦</i><span>NATURALIZER TARYN $16.820</span><i>✦</i><span>AIR950 ANC + ENC $19.990</span><i>✦</i><span>CELULARES DESDE $79.990</span><i>✦</i><span>MOTO G06 256 GB $112.760</span><i>✦</i><span>META QUEST 3S 128 GB</span><i>✦</i><span>TROTADORAS DESDE $99.990</span><i>✦</i><span>BELLEZA 5 EN 1 $69.990</span>';
+      ticker.innerHTML = '<span>POWER BANK 20.000 MAH $19.990 CON CMR</span><i>✦</i><span>MOTO G06 256 GB $112.760</span><i>✦</i><span>NATURALIZER TARYN $16.820</span><i>✦</i><span>AIR950 ANC + ENC $19.990</span><i>✦</i><span>POWER BANK 20.000 MAH $19.990 CON CMR</span><i>✦</i><span>CELULARES DESDE $79.990</span><i>✦</i><span>META QUEST 3S 128 GB</span><i>✦</i><span>TROTADORAS DESDE $99.990</span>';
     }
 
     const banner = document.querySelector('.final-banner');
     const bannerCopy = banner?.querySelector('div');
     const bannerLink = banner?.querySelector('a');
-    if (bannerCopy) bannerCopy.innerHTML = '<span>NUEVA OFERTA · TECNOLOGÍA</span><h2>Moto G06 · 256 GB</h2><p>Pantalla de 120 Hz, cámara de 50 MP y batería de 5200 mAh por $112.760.</p>';
-    if (bannerLink) {
-      bannerLink.dataset.offerId = motoG06Offer.id;
-      bannerLink.href = offerRoute(motoG06Offer.id);
-      bannerLink.innerHTML = '<span>Ver oferta Moto G06</span><b>→</b>';
+    if (powerBankOffer && bannerCopy) {
+      bannerCopy.innerHTML = '<span>NUEVA OFERTA · FALABELLA</span><h2>Power bank · 20.000 mAh</h2><p>$19.990 pagando con CMR Falabella · $21.990 sin CMR.</p>';
+    }
+    if (powerBankOffer && bannerLink) {
+      bannerLink.dataset.offerId = powerBankOffer.id;
+      bannerLink.href = offerRoute(powerBankOffer.id);
+      bannerLink.innerHTML = '<span>Ver oferta en Falabella</span><b>→</b>';
     }
   }
 
