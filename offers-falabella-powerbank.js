@@ -14,6 +14,7 @@
     regularOfferPrice: 21990,
     oldPrice: 34990,
     priceCondition: 'Precio con CMR Falabella',
+    paymentRequirement: 'pagar con CMR Falabella',
     regularPriceCondition: 'Sin CMR Falabella',
     currency: 'CLP',
     badge: '43% OFF · Precio CMR',
