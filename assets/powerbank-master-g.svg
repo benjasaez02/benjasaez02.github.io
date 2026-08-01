@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" role="img" aria-labelledby="title desc">
+  <title id="title">Power bank Master G de 20000 mAh</title>
+  <desc id="desc">Ilustración de respaldo de una batería externa azul con pantalla y puertos de carga.</desc>
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16b8d6"/>
+      <stop offset=".48" stop-color="#087fae"/>
+      <stop offset="1" stop-color="#064c89"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" x2="1">
+      <stop stop-color="#073866"/>
+      <stop offset="1" stop-color="#051d3c"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="28" stdDeviation="26" flood-color="#000" flood-opacity=".42"/>
+    </filter>
+  </defs>
+  <ellipse cx="385" cy="675" rx="205" ry="40" fill="#000" opacity=".25"/>
+  <g filter="url(#shadow)" transform="rotate(-4 380 380)">
+    <path d="M218 122 510 92c38-4 66 22 66 59v439c0 35-23 62-57 67l-289 38c-38 5-67-22-67-60V185c0-34 22-59 55-63Z" fill="url(#body)"/>
+    <path d="m510 92 48 25c15 8 24 22 24 41v429c0 26-13 47-35 59l-28 11c34-5 57-32 57-67V151c0-37-28-63-66-59Z" fill="url(#edge)" opacity=".8"/>
+    <path d="m214 122 297-30c28-3 51 8 61 30l-49 51-328 35-31-28c2-31 19-54 50-58Z" fill="#161a20"/>
+    <rect x="252" y="139" width="76" height="26" rx="7" fill="#050608"/>
+    <rect x="420" y="121" width="76" height="26" rx="7" fill="#050608"/>
+    <rect x="353" y="129" width="40" height="22" rx="6" fill="#050608"/>
+    <rect x="268" y="141" width="45" height="5" rx="2" fill="#ff6b32"/>
+    <rect x="436" y="123" width="45" height="5" rx="2" fill="#ff6b32"/>
+    <rect x="278" y="242" width="184" height="132" rx="24" fill="#07101a" stroke="#6aeaff" stroke-opacity=".24"/>
+    <text x="370" y="302" text-anchor="middle" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="800">100%</text>
+    <text x="370" y="346" text-anchor="middle" fill="#dcebf5" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700">20000 mAh</text>
+    <text x="370" y="455" text-anchor="middle" fill="#bff5ff" font-family="Arial,Helvetica,sans-serif" font-size="52" font-weight="900">22.5W</text>
+    <text x="370" y="618" text-anchor="middle" fill="#d8f8ff" font-family="Arial,Helvetica,sans-serif" font-size="42" font-style="italic" font-weight="700">Master-G</text>
+  </g>
+</svg>
